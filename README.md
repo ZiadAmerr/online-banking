@@ -11,7 +11,6 @@ This is a Java-based online banking system that allows users to manage accounts,
 - User-friendly and responsive UI
 
 ## Technologies Used
-Java 11
-JUnit 5.7.2
-JMeter 5.4.1
-Setup and Usage
+- Java 11
+- JUnit 5.7.2
+- JMeter 5.4.1
