@@ -1,29 +1,42 @@
 import java.time.LocalDateTime;
 
 public class Item {
-    private int item_id;
-    private String name;
-    private double price;
-    private LocalDateTime date_time;
-    private Account account;
+    private static int id_counter = 0;
+    private final int id;
+    private final String name;
+    private final ItemType type;
+    private final double price;
+    private LocalDateTime datePurchased = null;
+    private Account account = null;
+    private boolean wasPurchased = false;
 
-    public int get_item_id() {
-        return 0;
+    public enum ItemType {
+        BILL,
+        ITEM
     }
-
-    public String get_name() {
-        return "";
+    public Item(ItemType type, double price, String name) {
+        id = id_counter++;
+        this.name = name;
+        this.type = type;
+        this.price = price;
+        wasPurchased = false;
+        datePurchased = null;
+        this.account = null;
     }
-
-    public double get_price() {
-        return 0.0;
+    public int getId() {
+        return id;
     }
-
-    public LocalDateTime get_date_time() {
-        return null;
+    public String getName() {
+        return name;
     }
-
-    public Account get_account() {
-        return null;
+    public double getPrice() {
+        return price;
+    }
+    public LocalDateTime getDatePurchased() {
+        return datePurchased;
+    }
+    public Account getAccount() {
+        return account;
     }
 }
+
