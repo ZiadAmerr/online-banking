@@ -1,30 +1,27 @@
 import java.time.LocalDateTime;
 
 public class Notification {
-    private int notification_id;
-    private String message;
-    private LocalDateTime date_time;
-    private Transaction transaction;
-    private User recipient;
+    private static int id_counter = 0;
+    private final int id;
+    private final String message;
+    private final LocalDateTime dateSent;
 
-    public int get_notification_id() {
-        return 0;
+    public Notification(String message) {
+        this.id = id_counter++;
+        this.message = message;
+        this.dateSent = LocalDateTime.now();
     }
 
-    public String get_message() {
-        return "";
+    public int getId() {
+        return id;
     }
 
-    public LocalDateTime get_date_time() {
-        return null;
+    public String getMessage() {
+        return message;
     }
 
-    public Transaction get_transaction() {
-        return null;
-    }
-
-    public User get_recipient() {
-        return null;
+    public LocalDateTime getDateTime() {
+        return dateSent;
     }
 }
 
