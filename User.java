@@ -6,6 +6,7 @@ public class User {
     private String email;
     private String password;
     private List<Account> accounts;
+    private List<Notification> notifications;
 
     public void buy_item(Item item, Account account) {
     }
@@ -20,9 +21,6 @@ public class User {
     }
 
     public List<Notification> get_notifications() {
-        List<Notification> notifications = new ArrayList<>();
-        Notification notification = new Notification();
-        notifications.add(notification);
         return notifications;
     }
 }
