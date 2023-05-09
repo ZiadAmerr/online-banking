@@ -1,29 +1,55 @@
 import java.time.LocalDateTime;
 
 public class Transaction {
-    private int transaction_id;
-    private double amount;
-    private LocalDateTime date_time;
-    private Account from_account;
-    private Account to_account;
+    private static int idCounter = 0;
+    private final int id;
+    private final double amount;
+    private final LocalDateTime date;
+    private final Account fromAccount;
+    private Account toAccount;
+    private boolean isToItem;
+    private Item item;
 
-    public int get_transaction_id() {
-        return 0;
+    public Transaction(double amount, Account fromAccount) {
+        this.amount = amount;
+        this.fromAccount = fromAccount;
+        this.id = idCounter++;
+        this.date = LocalDateTime.now();
+    }
+    public Transaction(double amount, Account fromAccount, Account toAccount) {
+        this(amount, fromAccount);
+        this.toAccount = toAccount;
+        this.isToItem = false;
+        this.item = null;
+    }
+    public Transaction(Account fromAccount, Item toItem) {
+        this(toItem.getPrice(), fromAccount);
+        this.toAccount = null;
+        this.isToItem = true;
+        this.item = toItem;
     }
 
-    public double get_amount() {
-        return 0.0;
+    public int getId() {
+        return id;
     }
 
-    public LocalDateTime get_date_time() {
-        return null;
+    public double getAmount() {
+        return amount;
     }
 
-    public Account get_from_account() {
-        return null;
+    public LocalDateTime getDate() {
+        return date;
     }
 
-    public Account get_to_account() {
-        return null;
+    public Account getFromAccount() {
+        return fromAccount;
+    }
+
+    public Object getRecipient() {
+        if (isToItem) {
+            return item;
+        } else {
+            return toAccount;
+        }
     }
 }
