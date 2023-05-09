@@ -1,10 +1,11 @@
 import java.util.List;
 
 public class Account {
+    private static List<Account> accounts = null;
     private static int number_counter = 0;
     private final int number;
     private double balance;
-    private List<Transaction> transactions;
+    private final List<Transaction> transactions;
     private final User owner;
 
     public Account(User owner) {
@@ -12,6 +13,14 @@ public class Account {
         balance = 0.0;
         transactions = null;
         this.owner = owner;
+        accounts.add(this);
+    }
+    
+    public static Account getAccountByNumber(int number) {
+        for(Account account : accounts)
+            if (account.getNumber() == number)
+                return account;
+        return null;
     }
 
     public void deposit(double amount) {
@@ -37,7 +46,7 @@ public class Account {
         return true;
     }
 
-    public boolean pay(Item item) {
+    public boolean buy(Item item) {
         if (!withdraw(item.getPrice()))
             return false;
 

@@ -5,13 +5,11 @@ public class Notification {
     private final int id;
     private final String message;
     private final LocalDateTime dateSent;
-    private final Transaction transaction;
 
-    public Notification(String message, LocalDateTime dateSent, Transaction transaction) {
+    public Notification(String message) {
         this.id = id_counter++;
         this.message = message;
-        this.dateSent = dateSent;
-        this.transaction = transaction;
+        this.dateSent = LocalDateTime.now();
     }
 
     public int getId() {
@@ -24,10 +22,6 @@ public class Notification {
 
     public LocalDateTime getDateTime() {
         return dateSent;
-    }
-
-    public Transaction getTransaction() {
-        return transaction;
     }
 }
 
