@@ -6,14 +6,12 @@ public class Notification {
     private final String message;
     private final LocalDateTime dateSent;
     private final Transaction transaction;
-    private final User recipient;
 
-    public Notification(String message, LocalDateTime dateSent, Transaction transaction, User recipient) {
+    public Notification(String message, LocalDateTime dateSent, Transaction transaction) {
         this.id = id_counter++;
         this.message = message;
         this.dateSent = dateSent;
         this.transaction = transaction;
-        this.recipient = recipient;
     }
 
     public int getId() {
@@ -30,10 +28,6 @@ public class Notification {
 
     public Transaction getTransaction() {
         return transaction;
-    }
-
-    public User getRecipient() {
-        return recipient;
     }
 }
 
