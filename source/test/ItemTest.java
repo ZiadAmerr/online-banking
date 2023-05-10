@@ -18,7 +18,7 @@ class ItemTest {
     }
 
     @Test
-    void getName() {
+    void testGetName() {
         assertEquals("pepsi",item0.getName());
         assertEquals("fees",item1.getName());
     }
