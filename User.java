@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.ArrayList;
 
 public class User {
     private static int counter = 0;
@@ -6,8 +6,8 @@ public class User {
     private final String name;
     private final String username;
     private final String password;
-    private final Set<Account> accounts;
-    private final List<Notification> notifications;
+    private final ArrayList<Account> accounts = new ArrayList<Account>();
+    private final ArrayList<Notification> notifications = new ArrayList<Notification>();
     private Account account = null;
     private boolean isLoggedIn = false;
     
@@ -16,8 +16,6 @@ public class User {
         this.name = name;
         this.username = username;
         this.password = password;
-        this.accounts = new HashSet<>();
-        this.notifications = new ArrayList<>();
     }
     public boolean login(String username, String password) {
         if (isLoggedIn)
@@ -69,7 +67,7 @@ public class User {
         }
 
         notifications.add(
-                new Notification("You paid " + bill.getName() + " for " + bill.getPrice())
+                new Notification("You paid " + bill.getPrice() + " for " + bill.getName())
         );
         return true;
     }
@@ -106,11 +104,11 @@ public class User {
         return true;
     }
 
-    public List<Transaction> viewTransactions() {
+    public ArrayList<Transaction> viewTransactions() {
         return !isLoggedIn || account == null ? null : account.getTransactions();
     }
 
-    public List<Notification> getNotifications() {
+    public ArrayList<Notification> getNotifications() {
         return notifications;
     }
     
