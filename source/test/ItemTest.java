@@ -66,6 +66,6 @@ class ItemTest {
     @Test
     void getType() {
         assertEquals(Item.ItemType.ITEM, item0.getType());
-        assertEquals("BILL",item1.getType());
+        assertEquals(Item.ItemType.BILL, item1.getType());
     }
 }
