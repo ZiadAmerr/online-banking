@@ -24,7 +24,7 @@ class ItemTest {
     }
 
     @Test
-    void getPriceCaseNormal() {
+    void testGetPrice() {
         assertEquals(5,item0.getPrice());
         assertEquals(99999,item1.getPrice());
     }
