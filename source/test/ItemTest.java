@@ -12,7 +12,7 @@ class ItemTest {
         item1 = new Item(Item.ItemType.BILL,99999,"fees");
     }
     @Test
-    void getId() {
+    void testGetId() {
         assertEquals(0,item0.getId());
         assertEquals(1,item1.getId());
     }
