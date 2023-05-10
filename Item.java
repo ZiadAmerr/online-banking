@@ -72,20 +72,6 @@ public class Item {
 
     private static void main(String[] args) {
 
-        // Test the purchase() method with sufficient funds
-//        Account account = new Account(20.00);
-//        boolean result = item.purchase(account);
-//        assert result == true : "purchase() test failed";
-//        assert item.getAccount() == account : "purchase() test failed";
-//        assert item.getDatePurchased() != null : "purchase() test failed";
-//
-//        // Test the purchase() method with insufficient funds
-//        account = new Account(5.00);
-//        result = item.purchase(account);
-//        assert result == false : "purchase() test failed";
-//
-//        // Test the getType() method
-//        assert item.getType().equals("ITEM") : "getType() test failed";
     }
 }
 
