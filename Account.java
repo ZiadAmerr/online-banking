@@ -1,17 +1,18 @@
-import java.util.List;
+import java.sql.Array;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 public class Account {
-    private static List<Account> accounts = null;
+    private static ArrayList<Account> accounts = new ArrayList<Account>();
     private static int number_counter = 0;
     private final int number;
     private double balance;
-    private final List<Transaction> transactions;
+    private final ArrayList<Transaction> transactions = new ArrayList<Transaction>();
     private final User owner;
 
     public Account(User owner) {
         number = number_counter++;
         balance = 0.0;
-        transactions = null;
         this.owner = owner;
         accounts.add(this);
     }
@@ -47,9 +48,7 @@ public class Account {
     }
 
     public boolean buy(Item item) {
-        if (!withdraw(item.getPrice()))
-            return false;
-
+        if (!item.buy(this)) return false;
         transactions.add(new Transaction(this, item));
         return true;
     }
@@ -58,7 +57,7 @@ public class Account {
         return balance;
     }
 
-    public List<Transaction> getTransactions() {
+    public ArrayList<Transaction> getTransactions() {
         return transactions;
     }
 
