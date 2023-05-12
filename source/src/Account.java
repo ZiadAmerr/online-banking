@@ -1,4 +1,5 @@
-import java.time.LocalDateTime;
+package source.src;
+
 import java.util.ArrayList;
 
 public class Account {
@@ -24,10 +25,16 @@ public class Account {
     }
 
     public void deposit(double amount) {
+        if (amount < 0)
+            throw new IllegalArgumentException("Amount must be positive");
+
         balance += amount;
     }
 
     public boolean withdraw(double amount) {
+        if (amount < 0)
+            throw new IllegalArgumentException("Amount must be positive");
+
         double new_balance = balance - amount;
         if (new_balance < 0) {
             return false;
@@ -38,6 +45,9 @@ public class Account {
     }
 
     public boolean transfer(double amount, Account to_account) {
+        if (amount < 0)
+            throw new IllegalArgumentException("Amount must be positive");
+
         if (!withdraw(amount))
             return false;
 
@@ -47,6 +57,9 @@ public class Account {
     }
 
     public boolean buy(Item item) {
+        if (item == null)
+            throw new IllegalArgumentException("Item cannot be null");
+
         if (!item.buy(this)) return false;
         transactions.add(new Transaction(this, item));
         return true;

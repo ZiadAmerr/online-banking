@@ -1,6 +1,7 @@
+package source.src;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Item {
     private static ArrayList<Item> items = new ArrayList<Item>();
@@ -22,6 +23,15 @@ public class Item {
 
     // Constructor
     public Item(String name, double price, ItemType type) {
+        if (price < 0)
+            throw new IllegalArgumentException("Price cannot be negative");
+
+        if (name == null || name.equals(""))
+            throw new IllegalArgumentException("Name cannot be empty");
+
+        if (type == null)
+            throw new IllegalArgumentException("Type cannot be null");
+
         id = id_counter++;
         this.name = name;
         this.type = type;
@@ -42,7 +52,8 @@ public class Item {
         if (account.withdraw(price)) {
             this.account = account;
             datePurchased = LocalDateTime.now();
-            wasPurchased = true;
+            if (type == ItemType.BILL)
+                wasPurchased = true;
             return true;
         }
         return false;
@@ -51,8 +62,8 @@ public class Item {
 
 
     // getters
-    public String getType() {
-        return type.toString();
+    public ItemType getType() {
+        return type;
     }
     public int getId() {
         return id;
@@ -64,10 +75,14 @@ public class Item {
         return price;
     }
     public LocalDateTime getDatePurchased() {
+        if (datePurchased == null)
+            return LocalDateTime.MIN;
         return datePurchased;
     }
-    public Account getAccount() {
-        return account;
+    public int getAccountNumber() {
+        if (account == null)
+            return -1;
+        return account.getNumber();
     }
 
     private static void main(String[] args) {

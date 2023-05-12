@@ -1,3 +1,5 @@
+package source.src;
+
 import java.util.ArrayList;
 
 public class User {
@@ -86,7 +88,7 @@ public class User {
 
         if (toAccount == null) {
             notifications.add(
-                    new Notification("Account with number " + toNumber + " does not exist")
+                    new Notification("source.src.Account with number " + toNumber + " does not exist")
             );
             return false;
         }
