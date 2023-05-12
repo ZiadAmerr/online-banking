@@ -2,6 +2,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.*;
 
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 
 class ItemTest {
     private static Item item0;
@@ -27,13 +28,10 @@ class ItemTest {
     void testGetPrice() {
         assertEquals(5,item0.getPrice());
         assertEquals(99999,item1.getPrice());
-    }
-
-    @Test
-    void itemWithNegativePrice(){
         assertThrows(IllegalArgumentException.class ,()->
                 new Item(Item.ItemType.ITEM,-23,"water"));
     }
+
 
     @Test
     void getDatePurchased() {
@@ -41,7 +39,7 @@ class ItemTest {
         Account account = new Account(user);
         account.deposit(5000);
         item0.purchase(account);
-        assertEquals(LocalDateTime.now(),item0.getDatePurchased());
+        assertEquals(LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS),item0.getDatePurchased().truncatedTo(ChronoUnit.SECONDS));
     }
 
     @Test
