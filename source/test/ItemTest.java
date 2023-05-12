@@ -38,7 +38,7 @@ class ItemTest {
                 new Item("Water", -23, Item.ItemType.ITEM));
     }
     @Test
-    void purchase() {
+    void testBuy() {
         User user = new User("Bruce","batman","ilovecatwoman");
         Account account = new Account(user);
         account.deposit(5000);
