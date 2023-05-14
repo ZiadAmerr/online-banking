@@ -8,8 +8,7 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
 class ItemTest {
-    private static Item item0;
-    private static Item item1;
+    private static Item item0, item1;
     @BeforeAll
     static void init() {
         item0 = new Item("Pepsi",5, Item.ItemType.ITEM);
@@ -44,7 +43,6 @@ class ItemTest {
         account.deposit(5000);
         assertTrue(item0.buy(account));
         assertFalse(item1.buy(account));
-
     }
     @Test
     void getDatePurchased() {
@@ -56,26 +54,21 @@ class ItemTest {
         assertEquals(LocalDateTime.MIN, item0.getDatePurchased());
         assertEquals(LocalDateTime.MIN, item1.getDatePurchased());
 
-        assertTrue(item0.buy(account));
-
+        item0.buy(account);
         assertEquals(
                 LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS),
                 item0.getDatePurchased().truncatedTo(ChronoUnit.SECONDS)
         );
     }
     @Test
-    void getAccount() {
-        User user1 = new User("Bruce","batman","ilovecatwoman");
-        User user2 = new User("Bruce","batman","ilovecatwoman");
-        User user3 = new User("Bruce","batman","ilovecatwoman");
-        User user4 = new User("Bruce","batman","ilovecatwoman");
-        Account account = new Account(user4);
+    void testGetAccountNumber() {
+        User user = new User("Bruce","batman","ilovecatwoman");
+        Account account = new Account(user);
         account.deposit(5000);
 
-        assertTrue(item0.buy(account));
+        item0.buy(account);
         assertEquals(account.getNumber(), item0.getAccountNumber());
 
-        assertFalse(item1.buy(account));
         assertEquals(-1, item1.getAccountNumber());
     }
 }
