@@ -1,3 +1,6 @@
+package source.test;
+import source.src.*;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -7,14 +10,22 @@ class UserTest {
 
     static User user;
     @BeforeAll
-    static void setUp(){
-        user =  new User("bruce","batman","ilovecatwoman");
+    static void init() {
+        user =  new User("bruce", "batman", "ilovecatwoman");
     }
+
     @Test
     void login() {
-        assertTrue(user.login("batman","ilovecatwoman"));
+        assertTrue(user.login("batman", "ilovecatwoman"));
         user.logout();
-        assertFalse(user.login("batman","Ilovecatwoman"));
+        assertFalse(user.login("batman", "Ilovecatwoman"));
+    }
+
+    @Test
+    void testIsLoggedIn() {
+        assertFalse(user.isLoggedIn());
+        user.login("batman", "ilovecatwoman");
+        assertTrue(user.isLoggedIn());
     }
 
     @Test

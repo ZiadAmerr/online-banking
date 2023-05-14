@@ -1,3 +1,5 @@
+package source.src;
+
 import java.util.ArrayList;
 
 public class User {
@@ -9,7 +11,7 @@ public class User {
     private final ArrayList<Account> accounts = new ArrayList<Account>();
     private final ArrayList<Notification> notifications = new ArrayList<Notification>();
     private Account account = null;
-    private boolean isLoggedIn = false;
+    private boolean loggedIn = false;
     
     public User(String name, String username, String password) {
         this.id = counter++;
@@ -18,18 +20,18 @@ public class User {
         this.password = password;
     }
     public boolean login(String username, String password) {
-        if (isLoggedIn)
+        if (loggedIn)
             return true;
 
         if (this.username.equals(username) && this.password.equals(password)) {
-            isLoggedIn = true;
+            loggedIn = true;
             return true;
         }
 
         return false;
     }
     public boolean useAccount(int number) {
-        if (!isLoggedIn)
+        if (!loggedIn)
             return false;
         
         for(Account curr_account : accounts)
@@ -42,7 +44,7 @@ public class User {
         return false;
     }
     public void logout() {
-        isLoggedIn = false;
+        loggedIn = false;
     }
     public boolean buyItem(Item item) {
         if (account.buy(item)) {
@@ -73,7 +75,7 @@ public class User {
     }
 
     public boolean transferMoney(double amount, int toNumber) {
-        if (!isLoggedIn) return false;
+        if (!loggedIn) return false;
 
         if (account == null) {
             notifications.add(
@@ -86,7 +88,7 @@ public class User {
 
         if (toAccount == null) {
             notifications.add(
-                    new Notification("Account with number " + toNumber + " does not exist")
+                    new Notification("source.src.Account with number " + toNumber + " does not exist")
             );
             return false;
         }
@@ -105,7 +107,7 @@ public class User {
     }
 
     public ArrayList<Transaction> viewTransactions() {
-        return !isLoggedIn || account == null ? null : account.getTransactions();
+        return !loggedIn || account == null ? null : account.getTransactions();
     }
 
     public ArrayList<Notification> getNotifications() {
@@ -118,5 +120,9 @@ public class User {
 
     public int getId() {
         return id;
+    }
+
+    public boolean isLoggedIn() {
+        return loggedIn;
     }
 }
