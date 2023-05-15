@@ -5,20 +5,20 @@ import java.time.LocalDateTime;
 public class Transaction {
     private static int idCounter = 0;
     private final int id;
-    private final double amount;
+    private final float amount;
     private final LocalDateTime date;
     private final Account fromAccount;
     private Account toAccount;
     private boolean isToItem;
     private Item item;
 
-    public Transaction(double amount, Account fromAccount) {
+    public Transaction(float amount, Account fromAccount) {
         this.amount = amount;
         this.fromAccount = fromAccount;
         this.id = idCounter++;
         this.date = LocalDateTime.now();
     }
-    public Transaction(double amount, Account fromAccount, Account toAccount) {
+    public Transaction(float amount, Account fromAccount, Account toAccount) {
         this(amount, fromAccount);
         this.toAccount = toAccount;
         this.isToItem = false;
@@ -35,7 +35,7 @@ public class Transaction {
         return id;
     }
 
-    public double getAmount() {
+    public float getAmount() {
         return amount;
     }
 
