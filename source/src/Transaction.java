@@ -3,16 +3,16 @@ package source.src;
 import java.time.LocalDateTime;
 
 public class Transaction {
-    private final float amount;
-    private final LocalDateTime date;
-    private final Account fromAccount;
+    public final float amount;
+    public final LocalDateTime date;
+    public final int fromAccountNumber;
     private Account toAccount;
     private boolean isToItem;
     private Item item;
 
     public Transaction(float amount, Account fromAccount) {
         this.amount = amount;
-        this.fromAccount = fromAccount;
+        this.fromAccountNumber = fromAccount.getNumber();
         this.date = LocalDateTime.now();
     }
     public Transaction(float amount, Account fromAccount, Account toAccount) {
@@ -22,22 +22,10 @@ public class Transaction {
         this.item = null;
     }
     public Transaction(Account fromAccount, Item toItem) {
-        this(toItem.getPrice(), fromAccount);
+        this(toItem.price, fromAccount);
         this.toAccount = null;
         this.isToItem = true;
         this.item = toItem;
-    }
-
-    public float getAmount() {
-        return amount;
-    }
-
-    public LocalDateTime getDate() {
-        return date;
-    }
-
-    public Account getFromAccount() {
-        return fromAccount;
     }
 
     public Object getRecipient() {

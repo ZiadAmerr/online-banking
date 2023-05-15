@@ -8,11 +8,11 @@ public class User {
     private final String name;
     private final String username;
     private final String password;
-    private final ArrayList<Account> accounts = new ArrayList<Account>();
-    private final ArrayList<Notification> notifications = new ArrayList<Notification>();
+    private final ArrayList<Account> accounts = new ArrayList<>();
+    private final ArrayList<Notification> notifications = new ArrayList<>();
     private Account account = null;
     private boolean loggedIn = false;
-    private static final Map<Item, Integer> inventory = new HashMap<Item, Integer>();
+    private static final Map<Item, Integer> inventory = new HashMap<>();
 
     // Constructor
     public User(String name, String username, String password) {
@@ -90,7 +90,7 @@ public class User {
             return false;
         }
 
-        float price = item.getPrice();
+        float price = item.price;
 
         if (price > account.getBalance()) {
             notifications.add(
@@ -104,7 +104,7 @@ public class User {
                     new Notification("Could not withdraw " + price + " from your account")
             );
             return false;
-        };
+        }
 
         inventory.put(item, inventory.getOrDefault(item, 0) + 1);
 
@@ -156,9 +156,7 @@ public class User {
                     new Notification("You transferred " + amount + " to " + to_account.getUsername())
             );
 
-            account.getTransactions().add(
-                    new Transaction(amount, account)
-            );
+            account.transact(amount, account.getNumber());
 
             return true;
         } else {
