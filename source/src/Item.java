@@ -25,25 +25,6 @@ public class Item {
         this.price = price;
     }
 
-
-
-    // Core function
-//    public boolean buy(Account account) {
-//        if (wasPurchased) {
-//            return false;
-//        }
-//        if (account.withdraw(price)) {
-//            this.account = account;
-//            datePurchased = LocalDateTime.now();
-//            if (type == ItemType.BILL)
-//                wasPurchased = true;
-//            return true;
-//        }
-//        return false;
-//    }
-
-
-
     // getters
     public ItemType getType() {
         return type;
@@ -53,19 +34,6 @@ public class Item {
     }
     public float getPrice() {
         return price;
-    }
-//    public LocalDateTime getDatePurchased() {
-//        if (datePurchased == null)
-//            return LocalDateTime.MIN;
-//        return datePurchased;
-//    }
-//    public int getAccountNumber() {
-//        if (account == null)
-//            return -1;
-//        return account.getNumber();
-//    }
-
-    private static void main(String[] args) {
     }
 }
 
