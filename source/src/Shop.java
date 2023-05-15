@@ -7,7 +7,7 @@ public class Shop {
 
     public static Item getItem(String name) {
         for(Item item : inventory.keySet())
-            if (item.getName().equals(name))
+            if (item.name.equals(name))
                 return item;
         return null;
     }
