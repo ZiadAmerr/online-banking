@@ -46,6 +46,18 @@ public class Account {
         return true;
     }
 
+    // Transaction functions
+    public void transact(float amount, Object other) {
+        if (!(other instanceof Account) && !(other instanceof Item))
+            throw new IllegalArgumentException("Other must be an instance of source.src.Account or source.src.Item");
+
+        if (other instanceof Account other_account)
+            transactions.add(new Transaction(amount, this, other_account));
+
+        if (other instanceof Item item)
+            transactions.add(new Transaction(this, item));
+    }
+
     // getters
     public float getBalance() {
         return balance;
