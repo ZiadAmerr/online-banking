@@ -1,9 +1,9 @@
 package source.src;
 
 public class Item {
-    private final String name;
-    private final ItemType type;
-    private final float price;
+    public final String name;
+    public final ItemType type;
+    public final float price;
     public enum ItemType {
         BILL,
         ITEM
@@ -23,17 +23,6 @@ public class Item {
         this.name = name;
         this.type = type;
         this.price = price;
-    }
-
-    // getters
-    public ItemType getType() {
-        return type;
-    }
-    public String getName() {
-        return name;
-    }
-    public float getPrice() {
-        return price;
     }
 }
 
