@@ -3,8 +3,6 @@ package source.src;
 import java.time.LocalDateTime;
 
 public class Transaction {
-    private static int idCounter = 0;
-    private final int id;
     private final float amount;
     private final LocalDateTime date;
     private final Account fromAccount;
@@ -15,7 +13,6 @@ public class Transaction {
     public Transaction(float amount, Account fromAccount) {
         this.amount = amount;
         this.fromAccount = fromAccount;
-        this.id = idCounter++;
         this.date = LocalDateTime.now();
     }
     public Transaction(float amount, Account fromAccount, Account toAccount) {
@@ -29,10 +26,6 @@ public class Transaction {
         this.toAccount = null;
         this.isToItem = true;
         this.item = toItem;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public float getAmount() {

@@ -11,7 +11,7 @@ public class Account {
     private final User user;
 
     // Constructor
-    public Account(User user) {
+    Account(User user) {
         number = number_counter++;
         balance = 0;
         this.user = user;
@@ -19,7 +19,7 @@ public class Account {
     }
 
     // Static functions
-    public static Account getAccountByNumber(int number) {
+    static Account getAccountByNumber(int number) {
         for(Account account : accounts)
             if (account.getNumber() == number)
                 return account;
@@ -53,8 +53,8 @@ public class Account {
     public ArrayList<Transaction> getTransactions() {
         return transactions;
     }
-    public User getUser() {
-        return user;
+    public String getUsername() {
+        return user.getUsername();
     }
     public int getNumber() {
         return number;

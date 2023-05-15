@@ -33,6 +33,17 @@ public class User {
 
         return false;
     }
+    public boolean createAccount() {
+        if (!loggedIn)
+            return false;
+
+        Account account = new Account(this);
+        accounts.add(account);
+        notifications.add(
+                new Notification("Account with number " + account.getNumber() + " was created")
+        );
+        return true;
+    }
     public boolean useAccount(int number) {
         if (!loggedIn)
             return false;
@@ -134,7 +145,7 @@ public class User {
 
         if (amount > account.getBalance()) {
             notifications.add(
-                    new Notification("You don't have enough money to transfer " + amount + " to " + to_account.getUser().getName())
+                    new Notification("You don't have enough money to transfer " + amount + " to " + to_account.getUsername())
             );
             return false;
         }
@@ -142,7 +153,7 @@ public class User {
         if (account.withdraw(amount)) {
             to_account.deposit(amount);
             notifications.add(
-                    new Notification("You transferred " + amount + " to " + to_account.getUser().getName())
+                    new Notification("You transferred " + amount + " to " + to_account.getUsername())
             );
 
             account.getTransactions().add(
@@ -176,5 +187,8 @@ public class User {
     }
     public boolean isLoggedIn() {
         return loggedIn;
+    }
+    public String getUsername() {
+        return username;
     }
 }

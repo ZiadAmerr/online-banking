@@ -3,7 +3,7 @@ package source.src;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class Helpers {
+class Helpers {
     public static String getHash(String input) {
         // This function was obtained from:
         // https://www.geeksforgeeks.org/md5-hash-in-java/
