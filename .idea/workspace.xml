@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9326b27a-5c8f-43fe-83d7-f02f18b7c68f" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="project-struct" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="RunManager" selected="JUnit.ItemTest.getAccount">
+    <configuration name="ItemTest.getAccount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="online-banking" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="source.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="source.test" />
+      <option name="MAIN_CLASS_NAME" value="source.test.ItemTest" />
+      <option name="METHOD_NAME" value="getAccount" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ItemTest.getDatePurchased" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="online-banking" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="source.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="source.test" />
+      <option name="MAIN_CLASS_NAME" value="source.test.ItemTest" />
+      <option name="METHOD_NAME" value="getDatePurchased" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ItemTest.getType" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="online-banking" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="source.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="source.test" />
+      <option name="MAIN_CLASS_NAME" value="source.test.ItemTest" />
+      <option name="METHOD_NAME" value="getType" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ItemTest.purchase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="online-banking" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="source.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="source.test" />
+      <option name="MAIN_CLASS_NAME" value="source.test.ItemTest" />
+      <option name="METHOD_NAME" value="purchase" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ItemTest.testGetPrice" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="online-banking" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="source.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="source.test" />
+      <option name="MAIN_CLASS_NAME" value="source.test.ItemTest" />
+      <option name="METHOD_NAME" value="testGetPrice" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ItemTest.testGetPrice" />
+        <item itemvalue="JUnit.ItemTest.purchase" />
+        <item itemvalue="JUnit.ItemTest.getType" />
+        <item itemvalue="JUnit.ItemTest.getDatePurchased" />
+        <item itemvalue="JUnit.ItemTest.getAccount" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <servers />
+  </component>
+</project>
