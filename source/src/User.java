@@ -33,16 +33,16 @@ public class User {
 
         return false;
     }
-    public boolean createAccount() {
+    public int createAccount() {
         if (!loggedIn)
-            return false;
+            return -1;
 
         Account account = new Account(this);
         accounts.add(account);
         notifications.add(
                 new Notification("Account with number " + account.getNumber() + " was created")
         );
-        return true;
+        return account.getNumber();
     }
     public boolean useAccount(int number) {
         if (!loggedIn)
@@ -188,5 +188,13 @@ public class User {
     }
     public String getUsername() {
         return username;
+    }
+
+    public int[] getAccountNums(){
+        int[] arr = new int[accounts.size()];
+        for (int i =0;i<arr.length;i++){
+            arr[i] = accounts.get(i).getNumber();
+        }
+        return arr;
     }
 }
