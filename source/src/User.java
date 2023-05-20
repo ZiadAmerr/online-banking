@@ -1,4 +1,4 @@
-
+package source.src;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,7 +12,7 @@ public class User {
     private final ArrayList<Notification> notifications = new ArrayList<>();
     private Account account = null;
     private boolean loggedIn = false;
-    private static final Map<Item, Integer> inventory = new HashMap<>();
+    private static final Map<String, Integer> inventory = new HashMap<>();
 
     // Constructor
     public User(String name, String username, String password) {
@@ -33,16 +33,16 @@ public class User {
 
         return false;
     }
-    public int createAccount() {
+    public boolean createAccount() {
         if (!loggedIn)
-            return -1;
+            return false;
 
         Account account = new Account(this);
         accounts.add(account);
         notifications.add(
                 new Notification("Account with number " + account.getNumber() + " was created")
         );
-        return account.getNumber();
+        return true;
     }
     public boolean useAccount(int number) {
         if (!loggedIn)
@@ -81,16 +81,14 @@ public class User {
             return false;
         }
 
-        Item item = Shop.getItem(name);
-
-        if (item == null) {
+        if (!Shop.hasItem(name)) {
             notifications.add(
                     new Notification("Item with name " + name + " does not exist")
             );
             return false;
         }
 
-        float price = item.price;
+        float price = Shop.getPrice(name);
 
         if (price > account.getBalance()) {
             notifications.add(
@@ -106,7 +104,13 @@ public class User {
             return false;
         }
 
-        inventory.put(item, inventory.getOrDefault(item, 0) + 1);
+        if (!Shop.sellItem(name)) {
+            notifications.add(
+                    new Notification("Shop could not sell " + name)
+            );
+            return false;
+        }
+        inventory.put(name, inventory.getOrDefault(name, 0) + 1);
 
         notifications.add(new Notification("You bought " + name + " for " + price));
 
@@ -166,6 +170,43 @@ public class User {
             return false;
         }
     }
+    public boolean deposit(float amount) {
+        // 1. Check if the user is logged in.
+        // 2. Check if the user is using an account.
+        // 3. Check if amount is positive
+        // 4. Deposit amount to user's account
+        // 5. Add a notification about the successful deposit.
+        // 6. Return true to indicate a successful deposit.
+        // 7. If any of the above steps fail, add a notification about the failure and return false.
+        if (!loggedIn) return false;
+
+        if (account == null) {
+            notifications.add(
+                    new Notification("You are not currently using an account")
+            );
+            return false;
+        }
+
+        if (amount < 0) throw new IllegalArgumentException("Amount must be positive");
+
+        account.deposit(amount);  // account.balance += amount
+        notifications.add(
+                new Notification("You deposited " + amount + " to your account")
+        );
+
+        account.transact(amount, account.getNumber());
+
+        return true;
+    }
+    public float getBalance() {
+        // 1. Check if the user is logged in.
+        // 2. Check if the user is using an account.
+        // 3. Return the balance of the user's account.
+        // 4. Return -1 if the user is not logged in or is not using an account.
+        if (!loggedIn || account == null)
+            return -1;
+        return account.getBalance();
+    }
 
     // Getters
     public ArrayList<Transaction> viewTransactions() {
@@ -189,12 +230,14 @@ public class User {
     public String getUsername() {
         return username;
     }
-
-    public int[] getAccountNums(){
-        int[] arr = new int[accounts.size()];
-        for (int i =0;i<arr.length;i++){
-            arr[i] = accounts.get(i).getNumber();
+    public int hasHowMany(String name) {
+        return inventory.getOrDefault(name, 0);
+    }
+    public ArrayList<Integer> getAccountNums() {
+        ArrayList<Integer> accountNums = new ArrayList<>();
+        for (Account account : accounts) {
+            accountNums.add(account.getNumber());
         }
-        return arr;
+        return accountNums;
     }
 }
