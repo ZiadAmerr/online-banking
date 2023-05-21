@@ -2,7 +2,7 @@ package source.src;
 
 import java.util.ArrayList;
 
-public class Account {
+class Account {
     private static final ArrayList<Account> accounts = new ArrayList<>();
     private static int number_counter = 0;
     private final int number;
@@ -49,7 +49,7 @@ public class Account {
         transactions.add(new Transaction(amount, this.getNumber(), other_account_number));
     }
     public void transact(float amount, String name) {
-        if(!Shop.hasItem(name))
+        if (!Shop.itemExisted(name))
             throw new IllegalArgumentException("Item with name " + name + " does not exist");
 
         transactions.add(new Transaction(this.getNumber(), name));
