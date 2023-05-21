@@ -2,7 +2,7 @@ package source.src;
 
 import java.time.LocalDateTime;
 
-public class Notification {
+class Notification {
     public final String message;
     public final LocalDateTime dateSent;
 

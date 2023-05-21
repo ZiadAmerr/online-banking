@@ -2,7 +2,8 @@ package source.src;
 
 import java.time.LocalDateTime;
 
-public class Transaction {
+class Transaction {
+    public final int fromAccountNumber;
     public final float amount;
     public final LocalDateTime date;
     public final int fromAccountNumber;

@@ -8,7 +8,6 @@ import source.src.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class UserTest {
-
     static User user;
     private final String username = "batman";
     private final String password = "ilovecatwoman";
