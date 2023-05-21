@@ -102,7 +102,7 @@ class UserTest {
         assertEquals(3, user.hasHowMany("cola"));
         assertEquals(0, user.hasHowMany("pepsi"));
     }
-//
+
     @Test
     void testTransfer() {
         User user1 = new User("x","y","z");

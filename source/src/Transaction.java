@@ -6,7 +6,6 @@ class Transaction {
     public final int fromAccountNumber;
     public final float amount;
     public final LocalDateTime date;
-    public final int fromAccountNumber;
     private int toAccount;
     private boolean isToItem;
     private String item;

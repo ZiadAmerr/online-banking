@@ -44,7 +44,7 @@ public class Shop {
 
     public static boolean sellItem(String name) {
         Item item = getItem(name);
-        if (inventory.containsKey(item) && inventory.get(item) >= 1) {
+        if (hasItem(name)) {
             inventory.put(item, inventory.get(item) - 1);
             return true;
         }
@@ -54,6 +54,10 @@ public class Shop {
     public static boolean hasItem(String name) {
         Item item = getItem(name);
         return inventory.containsKey(item) && inventory.get(item) >= 1;
+    }
+
+    public static boolean itemExisted(String name) {
+        return getItem(name) != null;
     }
 
     public static float getPrice(String name) {

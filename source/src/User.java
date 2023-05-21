@@ -112,6 +112,7 @@ public class User {
         }
         inventory.put(name, inventory.getOrDefault(name, 0) + 1);
 
+        account.transact(price, name);
         notifications.add(new Notification("You bought " + name + " for " + price));
 
         return true;
