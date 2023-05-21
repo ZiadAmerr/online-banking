@@ -1,6 +1,6 @@
+package source.src;
 
-
-public class Item {
+class Item {
     public final String name;
     public final ItemType type;
     public final float price;

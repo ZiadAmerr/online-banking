@@ -1,15 +1,16 @@
+package source.test;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import source.src.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class UserTest {
-
     static User user;
-    private final String userName = "batman";
-    private final String pass = "ilovecatwoman";
+    private final String username = "batman";
+    private final String password = "ilovecatwoman";
 
     @BeforeAll
     static void setUp() {
@@ -22,82 +23,186 @@ class UserTest {
     }
 
     @Test
-    void login() {
+    void testLogin() {
+        assertFalse(user.isLoggedIn());
         assertTrue(user.login("batman", "ilovecatwoman"));
+        assertTrue(user.isLoggedIn());
+
         user.logout();
+        assertFalse(user.isLoggedIn());
         assertFalse(user.login("batman", "Ilovecatwoman"));
+        assertFalse(user.isLoggedIn());
     }
 
     @Test
-    void createAccount() {
-        assertEquals(-1, user.createAccount());
-        user.login(userName,pass);
-        assertTrue(user.createAccount()>=0);
+    void testCreateAccount() {
+        User user1 = new User("x","y","z");
+        assertFalse(user1.createAccount());
 
+        user1.login("y", "z");
+        assertTrue(user1.createAccount());
+        assertEquals(1, user1.getAccountNums().size());
+
+        assertTrue(user1.createAccount());
+        assertEquals(2, user1.getAccountNums().size());
+        assertEquals(user1.getAccountNums().get(0) + 1, user1.getAccountNums().get(1));
     }
 
     @Test
-    void useAccount() {
-        user.login(userName,pass);
-        int ac1 = user.createAccount();
-        assertTrue(user.useAccount(ac1));
+    void testUseAccount() {
+        User user1 = new User("x","y","z");
+        assertTrue(user1.login("y", "z"));
+        assertTrue(user1.createAccount());
+        int acc1 = user1.getAccountNums().get(0);
+        assertTrue(user1.useAccount(acc1));
+
+
         User user2 = new User("temp","temp","temp");
-        int ac2 = user2.createAccount();
-        assertFalse(user.useAccount(ac2));
         user2.login("temp","temp");
-        assertTrue(user2.useAccount(ac2));
-        assertFalse(user2.useAccount(ac1));
-
-
+        user2.createAccount();
+        int acc2 = user2.getAccountNums().get(0);
+        assertFalse(user2.useAccount(acc1));
+        assertTrue(user2.useAccount(acc2));
     }
 
     @Test
     void logout() {
-        user.login(userName,pass);
+        user.login(username,password);
         assertTrue(user.isLoggedIn());
         user.logout();
         assertFalse(user.isLoggedIn());
     }
 
     @Test
-    void buy() {
-        Item item = new Item("cola",32, Item.ItemType.ITEM);
-        Shop.addItem("cola",32);
-        user.login(userName,pass);
+    void testBuy() {
+        // 1. Add item
+        // 2. Login
+        // 3. Create account
+        // 4. Use account
+        // 5. Try to buy item
+        // 6. Deposit money
+
+        Shop.addItem("cola", 3, 1, "ITEM");
+
+        user.login(username, password);
+
         user.createAccount();
-        int ac1 = user.getAccountNums()[0];
-        user.useAccount(ac1);
-        Account.getAccountByNumber(ac1).deposit(323);
+
+        int account_number = user.getAccountNums().get(0);
+        user.useAccount(account_number);
+
+        assertFalse(user.buy("cola"));
+
+        user.deposit(323);
         assertTrue(user.buy("cola"));
+        assertEquals(1, user.hasHowMany("cola"));
+        assertTrue(user.buy("cola"));
+        assertTrue(user.buy("cola"));
+        assertFalse(user.buy("cola"));
+        assertEquals(3, user.hasHowMany("cola"));
+        assertEquals(0, user.hasHowMany("pepsi"));
     }
 
     @Test
-    void transfer() {
+    void testTransfer() {
+        User user1 = new User("x","y","z");
         User user2 = new User("temp","temp","temp");
-        user.login(userName,pass);
-        int ac1 = user.createAccount();
-        int ac2 = user2.createAccount();
-        Account.getAccountByNumber(ac1).deposit(100);
-        assertThrows(IllegalArgumentException.class,()->user.transfer(-12,ac2));
-        assertTrue(user.transfer(10,ac2));
-        assertEquals(10, Account.getAccountByNumber(ac2).getBalance());
+
+        user1.login("y","z");
+        user2.login("temp","temp");
+
+        user1.createAccount();
+        user2.createAccount();
+
+        int curr_acc_num = user1.getAccountNums().get(0);
+        int other_acc_num = user2.getAccountNums().get(0);
+
+        // Acc num does not exist
+        assertFalse(user1.transfer(12, 1324));
+
+        // Not enough money
+        assertFalse(user1.transfer(12, other_acc_num));
+
+        // Not using account
+        assertFalse(user1.transfer(0, other_acc_num));
+        assertFalse(user2.transfer(0, curr_acc_num));
+
+        // use Account
+        user1.useAccount(curr_acc_num);
+        user2.useAccount(other_acc_num);
+
+        // Using account
+        assertTrue(user1.transfer(0, other_acc_num));
+        assertTrue(user2.transfer(0, curr_acc_num));
+
+        user1.useAccount(user1.getAccountNums().get(0));
+        assertFalse(user1.transfer(12, other_acc_num));
+        
+        user1.deposit(24);
+        assertEquals(24, user1.getBalance());
+        assertEquals(0, user2.getBalance());
+
+        assertTrue(user1.transfer(12, other_acc_num));
+        assertEquals(12, user1.getBalance());
+        assertEquals(12, user2.getBalance());
+
+        assertTrue(user1.transfer(12, other_acc_num));
+        assertEquals(0, user1.getBalance());
+        assertEquals(24, user2.getBalance());
+
+        assertFalse(user1.transfer(12, other_acc_num));
+        assertEquals(0, user1.getBalance());
+        assertEquals(24, user2.getBalance());
+
+        assertTrue(user2.transfer(12, curr_acc_num));
+        assertEquals(12, user1.getBalance());
+        assertEquals(12, user2.getBalance());
+
+        assertTrue(user2.transfer(12, curr_acc_num));
+        assertEquals(24, user1.getBalance());
+        assertEquals(0, user2.getBalance());
+
+        assertFalse(user2.transfer(12, curr_acc_num));
+        assertEquals(24, user1.getBalance());
+        assertEquals(0, user2.getBalance());
+
+        assertThrows(IllegalArgumentException.class,
+                        () -> user1.transfer(-12, other_acc_num));
     }
 
     @Test
-    void viewTransactions() {
-        user.login(userName,pass);
-        int ac1 = user.createAccount();
-        Account.getAccountByNumber(ac1).deposit(123);
-        user.transfer(12,2);
-        assertEquals(1, user.viewTransactions().size());
+    void testViewTransactions() {
+        User user1 = new User("x","y","z");
+        // Not logged in
+        assertNull(user1.viewTransactions());
+
+        user1.login("y","z");
+        user1.createAccount();
+
+        // Not using an account
+        assertNull(user1.viewTransactions());
+
+        user1.useAccount(user1.getAccountNums().get(0));
+        assertEquals(0, user1.viewTransactions().size());
+
+        assertTrue(user1.deposit(123));
+        assertEquals(1, user1.viewTransactions().size());
+
+        assertFalse(user1.transfer(12,123));
+        assertEquals(1, user1.viewTransactions().size());
     }
 
     @Test
-    void getNotifications() {
-        user.login(userName,pass);
-        user.createAccount();
-        user.createAccount();
-        assertEquals(2, user.getNotifications().size());
+    void testGetNotifications() {
+        User user1 = new User("x","y","z");
+        user1.login("y","z");
+        assertEquals(0, user1.getNotifications().size());
+
+        user1.createAccount();
+        assertEquals(1, user1.getNotifications().size());
+
+        user1.createAccount();
+        assertEquals(2, user1.getNotifications().size());
     }
 
     @Test
@@ -110,6 +215,11 @@ class UserTest {
         assertFalse(user.isLoggedIn());
         user.login("batman", "ilovecatwoman");
         assertTrue(user.isLoggedIn());
+
+        user.logout();
+        assertFalse(user.isLoggedIn());
+        user.login("batman", "Ilovecatwoman");
+        assertFalse(user.isLoggedIn());
     }
 
     @Test

@@ -1,8 +1,8 @@
-
+package source.src;
 
 import java.util.ArrayList;
 
-public class Account {
+class Account {
     private static final ArrayList<Account> accounts = new ArrayList<>();
     private static int number_counter = 0;
     private final int number;
@@ -28,15 +28,9 @@ public class Account {
 
     // Money functions
     public void deposit(float amount) {
-        if (amount < 0)
-            throw new IllegalArgumentException("Amount must be positive");
-
         balance += amount;
     }
     public boolean withdraw(float amount) {
-        if (amount < 0)
-            throw new IllegalArgumentException("Amount must be positive");
-
         float new_balance = balance - amount;
         if (new_balance < 0) {
             return false;
@@ -47,16 +41,20 @@ public class Account {
     }
 
     // Transaction functions
-    public void transact(float amount, Object other) {
-        if (!(other instanceof Account) && !(other instanceof Item))
-            throw new IllegalArgumentException("Other must be an instance of source.src.Account or source.src.Item");
+    public void transact(float amount, int other_account_number) {
+        Account other = getAccountByNumber(other_account_number);
+        if (other == null)
+            throw new IllegalArgumentException("Account with number " + other_account_number + " does not exist");
 
-        if (other instanceof Account other_account)
-            transactions.add(new Transaction(amount, this, other_account));
-
-        if (other instanceof Item item)
-            transactions.add(new Transaction(this, item));
+        transactions.add(new Transaction(amount, this.getNumber(), other_account_number));
     }
+    public void transact(float amount, String name) {
+        if (!Shop.itemExisted(name))
+            throw new IllegalArgumentException("Item with name " + name + " does not exist");
+
+        transactions.add(new Transaction(this.getNumber(), name));
+    }
+
 
     // getters
     public float getBalance() {
@@ -70,5 +68,13 @@ public class Account {
     }
     public int getNumber() {
         return number;
+    }
+
+    // Function that returns an ArrayList of all the account numbers
+    public static ArrayList<Integer> getAccountNumbers() {
+        ArrayList<Integer> account_numbers = new ArrayList<>();
+        for(Account account : accounts)
+            account_numbers.add(account.getNumber());
+        return account_numbers;
     }
 }
