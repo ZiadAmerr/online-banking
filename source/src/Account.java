@@ -7,8 +7,6 @@ class Account {
     private static int number_counter = 0;
     private final int number;
     private float balance;
-    private String type;
-    private String currency;
     private final ArrayList<Transaction> transactions = new ArrayList<>();
     private final User user;
 
