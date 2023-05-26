@@ -241,4 +241,77 @@ public class User {
         }
         return accountNums;
     }
+
+    /**
+     * Returns an array of the account details
+     * @return The array contains the following elements:
+     * <ol start="0">
+     *      <li>accountNumber - type: int
+     *      <li>balance - type: float
+     *      <li>transactions - type: ArrayList of Transaction
+     * */
+    public ArrayList<AccountData> getAccountsData() {
+        if (!loggedIn) return null;
+
+        ArrayList<Integer> accountNums = getAccountNums();
+        ArrayList<AccountData> accountsData = new ArrayList<>();
+
+        for (int accountNum : accountNums) {
+            accountsData.add(getAccountData(accountNum));
+        }
+
+        return accountsData;
+    }
+    private AccountData getAccountData(int accountNum) {
+        if (!loggedIn) return null;
+
+        Account account = Account.getAccountByNumber(accountNum);
+
+        if (account == null) return null;
+
+        return account.getData();
+    }
+
+
+    public ArrayList<TransactionData> getTransactionsData() {
+        if (!loggedIn || account == null)
+            return null;
+        ArrayList<Transaction> transactions = viewTransactions();
+        ArrayList<TransactionData> transactionRows = new ArrayList<>();
+        for (Transaction transaction : transactions) {
+            transactionRows.add(getTransactionData(transaction));
+        }
+        return transactionRows;
+}
+    private TransactionData getTransactionData(Transaction transaction){
+
+        return new TransactionData(transaction.amount,transaction.getToAccount(),transaction.fromAccountNumber,transaction.getIsToItem(),
+                transaction.getItem(),transaction.date);
+
+    }
+
+
+
+
+        public static void main(String[] args) {
+        User ziad = new User("Ziad", "ziad", "1234");
+
+        ziad.login("ziad", "1234");
+
+        assert ziad.isLoggedIn();
+
+        ziad.createAccount();
+        ziad.createAccount();
+        ziad.createAccount();
+
+        int curr_num = ziad.getAccountNums().get(2);
+
+        // ziad.useAccount(curr_num);
+
+        ziad.deposit(1000);
+
+        ziad.buy("Apple");
+
+        ziad.logout();
+    }
 }
