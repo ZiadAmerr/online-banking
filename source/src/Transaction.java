@@ -2,7 +2,7 @@ package source.src;
 
 import java.time.LocalDateTime;
 
-class Transaction {
+public class Transaction {
     public final int fromAccountNumber;
     public final float amount;
     public final LocalDateTime date;
@@ -10,9 +10,11 @@ class Transaction {
     private boolean isToItem;
     private String item;
 
+
+
     public Transaction(float amount, int fromAccount) {
-        if (!Account.getAccountNumbers().contains(fromAccount))
-            throw new IllegalArgumentException("Account with number " + fromAccount + " does not exist");
+//        if (!Account.getAccountNumbers().contains(fromAccount))
+//            throw new IllegalArgumentException("Account with number " + fromAccount + " does not exist");
         this.amount = amount;
         this.fromAccountNumber = fromAccount;
         this.date = LocalDateTime.now();
@@ -38,7 +40,7 @@ class Transaction {
         }
     }
 
-    /** TODO: implement this method
+    /**
      * Returns an array of the transaction details
      * @return The array contains the following elements:
      * <ol start="0">
@@ -49,15 +51,46 @@ class Transaction {
      *   <li>isToItem - type: boolean
      *   <li>item - type: String
      */
-    public Object[] getData() {
-        Object[] transactionDetails = new Object[6];
-        transactionDetails[0] = fromAccountNumber;
-        transactionDetails[1] = amount;
-        transactionDetails[2] = date;
-        transactionDetails[3] = toAccount;
-        transactionDetails[4] = isToItem;
-        transactionDetails[5] = item;
+    public int getToAccount(){
+        return toAccount;
+    }
+    public boolean getIsToItem(){
+        return isToItem;
+    }
+    public String getItem(){
 
-        return transactionDetails;
+        return item;
+    }
+
+
+    public Object[] getData() {
+        return new Object[] {
+                fromAccountNumber,
+                amount,
+                date,
+                toAccount,
+                isToItem,
+                item
+        };
+    }
+    
+    public static void main(String[] args) {
+        Transaction t = new Transaction(100, 1, 2);
+        Object[] data = t.getData();
+        assert (int) data[0] == 1;
+        assert (int) data[1] == 100;
+        assert data[2] instanceof LocalDateTime;
+        assert (int) data[3] == 2;
+        assert !((boolean) data[4]);
+        assert data[5] == null;
+
+//        t = new Transaction(1, "item");
+//        data = t.getData();
+//        assert data[0] == 1;
+//        assert data[1] == Shop.getPrice("item");
+//        assert data[2] instanceof LocalDateTime;
+//        assert data[3] == -1;
+//        assert (boolean) data[4] == false;
+//        assert data[5] == "item";
     }
 }

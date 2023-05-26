@@ -7,6 +7,8 @@ class Account {
     private static int number_counter = 0;
     private final int number;
     private float balance;
+    private String type;
+    private String currency;
     private final ArrayList<Transaction> transactions = new ArrayList<>();
     private final User user;
 
@@ -18,6 +20,7 @@ class Account {
         accounts.add(this);
     }
 
+
     // Static functions
     static Account getAccountByNumber(int number) {
         for(Account account : accounts)
@@ -25,6 +28,8 @@ class Account {
                 return account;
         return null;
     }
+
+
 
     // Money functions
     public void deposit(float amount) {
@@ -69,6 +74,22 @@ class Account {
     public int getNumber() {
         return number;
     }
+    public String getType() {
+        return type;
+    }
+    public String getCurrency() {
+        return currency;
+    }
+
+    public AccountData getData() {
+        return new AccountData(
+                number,
+                balance,
+                currency,
+                type
+        );
+    }
+
 
     // Function that returns an ArrayList of all the account numbers
     public static ArrayList<Integer> getAccountNumbers() {
