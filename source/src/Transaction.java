@@ -3,94 +3,80 @@ package source.src;
 import java.time.LocalDateTime;
 
 public class Transaction {
-    public final int fromAccountNumber;
-    public final float amount;
-    public final LocalDateTime date;
-    private int toAccount;
-    private boolean isToItem;
-    private String item;
+    private final int fromAccountNumber;
+    private final float amount;
+    private final LocalDateTime date;
+    private final int toAccount;
+    private final boolean isToBuyable;
+    private final String buyableName;
 
 
+    // Constructors
+    public Transaction(float amount, int fromAccount, int toAccount) {
+        if (amount <= 0)
+            throw new IllegalArgumentException("Amount must be positive");
 
-    public Transaction(float amount, int fromAccount) {
-//        if (!Account.getAccountNumbers().contains(fromAccount))
-//            throw new IllegalArgumentException("Account with number " + fromAccount + " does not exist");
+        if (Account.getAccountByNumber(fromAccount) == null)
+            throw new IllegalArgumentException("Sender account does not exist");
+
+        if (Account.getAccountByNumber(toAccount) == null)
+            throw new IllegalArgumentException("Receiver account does not exist");
+
         this.amount = amount;
         this.fromAccountNumber = fromAccount;
         this.date = LocalDateTime.now();
-    }
-    public Transaction(float amount, int fromAccount, int toAccount) {
-        this(amount, fromAccount);
         this.toAccount = toAccount;
-        this.isToItem = false;
-        this.item = null;
+        this.isToBuyable = false;
+        this.buyableName = null;
     }
-    public Transaction(int fromAccount, String toItem) {
-        this(Shop.getPrice(toItem), fromAccount);
+    public Transaction(int fromAccount, String toBuyable) {
+        if (toBuyable == null || toBuyable.equals(""))
+            throw new IllegalArgumentException("Name cannot be empty");
+
+        if (!Shop.hasBill(toBuyable) && !Shop.itemExisted(toBuyable))
+            throw new IllegalArgumentException("Buyable does not exist");
+
+        if (Shop.hasBill(toBuyable))
+            this.amount = Shop.getBillPrice(toBuyable);
+        else
+            this.amount = Shop.getItemPrice(toBuyable);
+
+
+        this.fromAccountNumber = fromAccount;
+        this.date = LocalDateTime.now();
         this.toAccount = -1;
-        this.isToItem = true;
-        this.item = toItem;
+        this.isToBuyable = true;
+        this.buyableName = toBuyable;
     }
 
-    public Object getRecipient() {
-        if (isToItem) {
-            return item;
-        } else {
-            return toAccount;
-        }
+    // getters
+    public int getFromAccountNumber() {
+        return fromAccountNumber;
     }
-
-    /**
-     * Returns an array of the transaction details
-     * @return The array contains the following elements:
-     * <ol start="0">
-     *   <li>fromAccountNumber - type: int
-     *   <li>amount - type: float
-     *   <li>date - type: LocalDateTime
-     *   <li>toAccount - type: int
-     *   <li>isToItem - type: boolean
-     *   <li>item - type: String
-     */
-    public int getToAccount(){
+    public float getAmount() {
+        return amount;
+    }
+    public LocalDateTime getDate() {
+        return date;
+    }
+    public int getToAccount() {
         return toAccount;
     }
-    public boolean getIsToItem(){
-        return isToItem;
+    public boolean isToBuyable() {
+        return isToBuyable;
     }
-    public String getItem(){
-
-        return item;
+    public String getBuyableName() {
+        return buyableName;
     }
 
-
-    public Object[] getData() {
-        return new Object[] {
-                fromAccountNumber,
-                amount,
-                date,
-                toAccount,
-                isToItem,
-                item
-        };
-    }
-    
-    public static void main(String[] args) {
-        Transaction t = new Transaction(100, 1, 2);
-        Object[] data = t.getData();
-        assert (int) data[0] == 1;
-        assert (int) data[1] == 100;
-        assert data[2] instanceof LocalDateTime;
-        assert (int) data[3] == 2;
-        assert !((boolean) data[4]);
-        assert data[5] == null;
-
-//        t = new Transaction(1, "item");
-//        data = t.getData();
-//        assert data[0] == 1;
-//        assert data[1] == Shop.getPrice("item");
-//        assert data[2] instanceof LocalDateTime;
-//        assert data[3] == -1;
-//        assert (boolean) data[4] == false;
-//        assert data[5] == "item";
+    // Data getter
+    public TransactionData getData() {
+        return new TransactionData(
+            fromAccountNumber,
+            amount,
+            date,
+            toAccount,
+            isToBuyable,
+            buyableName);
     }
 }

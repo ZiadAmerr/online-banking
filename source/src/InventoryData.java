@@ -1,10 +1,13 @@
 package source.src;
 
-public record InventoryData(int item,int count) {
-    public int getItem(){
+public record InventoryData(
+        String item,
+        int count
+) {
+    public String getItem() {
         return item;
     }
-    public int getCount(){
+    public int getCount() {
         return count;
     }
 }

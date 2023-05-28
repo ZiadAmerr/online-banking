@@ -1,40 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="9326b27a-5c8f-43fe-83d7-f02f18b7c68f" name="Changes" comment="" />
+    <list default="true" id="9326b27a-5c8f-43fe-83d7-f02f18b7c68f" name="Changes" comment="Major update">
+      <change afterPath="$PROJECT_DIR$/source/src/Bill.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/src/Buyable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/src/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/src/AccountData.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/AccountData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/src/BillsData.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/BillData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/src/Helpers.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/Helpers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/src/InventoryData.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/InventoryData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/src/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/src/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/Notification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/src/NotificationData.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/NotificationData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/src/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/Shop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/src/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/src/TransactionData.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/TransactionData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/test/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/UserTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Record" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="project-struct" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2QNmQfki1kwXiemUlVPonI0J8nf" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
-  <component name="RunManager" selected="JUnit.ItemTest.getAccount">
-    <configuration name="ItemTest.getAccount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="online-banking" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="source.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="source.test" />
-      <option name="MAIN_CLASS_NAME" value="source.test.ItemTest" />
-      <option name="METHOD_NAME" value="getAccount" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="JUnit.UserTest">
     <configuration name="ItemTest.getDatePurchased" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="online-banking" />
       <extension name="coverage">
@@ -99,17 +133,53 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="online-banking" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="source.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="source.test" />
+      <option name="MAIN_CLASS_NAME" value="source.test.UserTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserTest" />
         <item itemvalue="JUnit.ItemTest.testGetPrice" />
         <item itemvalue="JUnit.ItemTest.purchase" />
         <item itemvalue="JUnit.ItemTest.getType" />
         <item itemvalue="JUnit.ItemTest.getDatePurchased" />
-        <item itemvalue="JUnit.ItemTest.getAccount" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9326b27a-5c8f-43fe-83d7-f02f18b7c68f" name="Changes" comment="Added data getters" />
+      <created>1685202405375</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1685202405375</updated>
+      <workItem from="1685202407097" duration="5153000" />
+      <workItem from="1685223789784" duration="2575000" />
+      <workItem from="1685226432423" duration="34000" />
+      <workItem from="1685227370609" duration="261000" />
+      <workItem from="1685227848024" duration="252000" />
+      <workItem from="1685230244679" duration="9926000" />
+    </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Major update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Major update" />
   </component>
 </project>
