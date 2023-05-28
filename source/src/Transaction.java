@@ -13,7 +13,7 @@ public class Transaction {
 
     // Constructors
     public Transaction(float amount, int fromAccount, int toAccount) {
-        if (amount <= 0)
+        if (amount < 0)
             throw new IllegalArgumentException("Amount must be positive");
 
         if (Account.getAccountByNumber(fromAccount) == null)
