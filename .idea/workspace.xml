@@ -5,20 +5,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9326b27a-5c8f-43fe-83d7-f02f18b7c68f" name="Changes" comment="Major update">
-      <change afterPath="$PROJECT_DIR$/source/src/Bill.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/src/Buyable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/src/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/src/AccountData.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/AccountData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/src/BillsData.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/BillData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/src/Helpers.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/Helpers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/src/InventoryData.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/InventoryData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/src/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/src/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/Notification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/src/NotificationData.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/NotificationData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/src/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/Shop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/Online Banking GUI.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/asu/onlinebankinggui/ControllerUtility.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/asu/onlinebankinggui/LoginPageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/asu/onlinebankinggui/MainMenuPageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/asu/onlinebankinggui/OnlineBankingSystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/asu/onlinebankinggui/SignupPageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/asu/onlinebankinggui/WelcomePageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/asu/onlinebankinggui/LoginPage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/asu/onlinebankinggui/MainMenuPage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/asu/onlinebankinggui/SignupPage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/asu/onlinebankinggui/WelcomePage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/asu/onlinebankinggui/css/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/asu/onlinebankinggui/fonts/PT_Sans_Narrow/OFL.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/asu/onlinebankinggui/fonts/PT_Sans_Narrow/PTSansNarrow-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/asu/onlinebankinggui/fonts/PT_Sans_Narrow/PTSansNarrow-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/asu/onlinebankinggui/images/BankIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/target/classes/asu/onlinebankinggui/ControllerUtility.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/target/classes/asu/onlinebankinggui/LoginPage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/target/classes/asu/onlinebankinggui/LoginPageController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/target/classes/asu/onlinebankinggui/MainMenuPage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/target/classes/asu/onlinebankinggui/MainMenuPageController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/target/classes/asu/onlinebankinggui/OnlineBankingSystem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/target/classes/asu/onlinebankinggui/SignupPage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/target/classes/asu/onlinebankinggui/SignupPageController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/target/classes/asu/onlinebankinggui/WelcomePage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/target/classes/asu/onlinebankinggui/WelcomePageController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/target/classes/asu/onlinebankinggui/css/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/target/classes/asu/onlinebankinggui/fonts/PT_Sans_Narrow/OFL.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/target/classes/asu/onlinebankinggui/fonts/PT_Sans_Narrow/PTSansNarrow-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/target/classes/asu/onlinebankinggui/fonts/PT_Sans_Narrow/PTSansNarrow-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/target/classes/asu/onlinebankinggui/images/BankIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/target/classes/module-info.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/source/src/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/src/TransactionData.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/TransactionData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/test/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/UserTest.java" afterDir="false" />
     </list>
@@ -55,36 +78,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="JUnit.UserTest">
-    <configuration name="ItemTest.getDatePurchased" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="online-banking" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="source.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="source.test" />
-      <option name="MAIN_CLASS_NAME" value="source.test.ItemTest" />
-      <option name="METHOD_NAME" value="getDatePurchased" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ItemTest.getType" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="online-banking" />
       <extension name="coverage">
@@ -148,13 +155,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserTest.testLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="online-banking" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="source.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="source.test" />
+      <option name="MAIN_CLASS_NAME" value="source.test.UserTest" />
+      <option name="METHOD_NAME" value="testLogin" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.UserTest" />
+        <item itemvalue="JUnit.UserTest.testLogin" />
         <item itemvalue="JUnit.ItemTest.testGetPrice" />
         <item itemvalue="JUnit.ItemTest.purchase" />
         <item itemvalue="JUnit.ItemTest.getType" />
-        <item itemvalue="JUnit.ItemTest.getDatePurchased" />
       </list>
     </recent_temporary>
   </component>
@@ -172,6 +195,7 @@
       <workItem from="1685227370609" duration="261000" />
       <workItem from="1685227848024" duration="252000" />
       <workItem from="1685230244679" duration="9926000" />
+      <workItem from="1685293387065" duration="1090000" />
     </task>
     <servers />
   </component>
