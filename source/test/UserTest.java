@@ -5,6 +5,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import source.src.*;
 
+import java.util.Collections;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class UserTest {
@@ -176,13 +178,13 @@ class UserTest {
     void testViewTransactions() {
         User user1 = new User("x","y","z");
         // Not logged in
-        assertNull(user1.viewTransactions());
+        assertEquals(user1.viewTransactions(), Collections.emptyList());
 
         user1.login("y","z");
         user1.createAccount("EGP", "Checking");
 
         // Not using an account
-        assertNull(user1.viewTransactions());
+        assertEquals(user1.viewTransactions(), Collections.emptyList());
 
         user1.useAccount(user1.getAccountNums().get(0));
         assertEquals(0, user1.viewTransactions().size());

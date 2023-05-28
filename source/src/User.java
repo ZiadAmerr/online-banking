@@ -42,9 +42,10 @@ public class User {
         if (!type.equals("Checking") && !type.equals("Savings"))
             return false;
 
-        accounts.add(new Account(this, currency, type));
+        Account createdAccount = new Account(this, currency, type);
+        accounts.add(createdAccount);
         notifications.add(
-                new Notification("Account with number " + account.getNumber() + " was created")
+                new Notification("Account with number " + createdAccount.getNumber() + " was created")
         );
         return true;
     }
