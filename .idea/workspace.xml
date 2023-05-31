@@ -6,44 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9326b27a-5c8f-43fe-83d7-f02f18b7c68f" name="Changes" comment="Major update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/Online Banking GUI.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/asu/onlinebankinggui/ControllerUtility.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/asu/onlinebankinggui/LoginPageController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/asu/onlinebankinggui/MainMenuPageController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/asu/onlinebankinggui/OnlineBankingSystem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/asu/onlinebankinggui/SignupPageController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/asu/onlinebankinggui/WelcomePageController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/module-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/asu/onlinebankinggui/LoginPage.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/asu/onlinebankinggui/MainMenuPage.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/asu/onlinebankinggui/SignupPage.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/asu/onlinebankinggui/WelcomePage.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/asu/onlinebankinggui/css/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/asu/onlinebankinggui/fonts/PT_Sans_Narrow/OFL.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/asu/onlinebankinggui/fonts/PT_Sans_Narrow/PTSansNarrow-Bold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/asu/onlinebankinggui/fonts/PT_Sans_Narrow/PTSansNarrow-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/resources/asu/onlinebankinggui/images/BankIcon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/target/classes/asu/onlinebankinggui/ControllerUtility.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/target/classes/asu/onlinebankinggui/LoginPage.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/target/classes/asu/onlinebankinggui/LoginPageController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/target/classes/asu/onlinebankinggui/MainMenuPage.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/target/classes/asu/onlinebankinggui/MainMenuPageController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/target/classes/asu/onlinebankinggui/OnlineBankingSystem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/target/classes/asu/onlinebankinggui/SignupPage.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/target/classes/asu/onlinebankinggui/SignupPageController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/target/classes/asu/onlinebankinggui/WelcomePage.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/target/classes/asu/onlinebankinggui/WelcomePageController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/target/classes/asu/onlinebankinggui/css/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/target/classes/asu/onlinebankinggui/fonts/PT_Sans_Narrow/OFL.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/target/classes/asu/onlinebankinggui/fonts/PT_Sans_Narrow/PTSansNarrow-Bold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/target/classes/asu/onlinebankinggui/fonts/PT_Sans_Narrow/PTSansNarrow-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/target/classes/asu/onlinebankinggui/images/BankIcon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/target/classes/module-info.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/src/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/test/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/UserTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,28 +33,34 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2QNmQfki1kwXiemUlVPonI0J8nf" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="JUnit.UserTest">
-    <configuration name="ItemTest.getType" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\online-banking\source\test" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.TestUserBuy.SeccPurchase">
+    <configuration name="TestName.checkName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="online-banking" />
       <extension name="coverage">
         <pattern>
@@ -101,14 +69,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="source.test" />
-      <option name="MAIN_CLASS_NAME" value="source.test.ItemTest" />
-      <option name="METHOD_NAME" value="getType" />
+      <option name="MAIN_CLASS_NAME" value="source.test.TestName" />
+      <option name="METHOD_NAME" value="checkName" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ItemTest.purchase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestUserBuy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="online-banking" />
       <extension name="coverage">
         <pattern>
@@ -117,14 +85,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="source.test" />
-      <option name="MAIN_CLASS_NAME" value="source.test.ItemTest" />
-      <option name="METHOD_NAME" value="purchase" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="source.test.TestUserBuy" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ItemTest.testGetPrice" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestUserBuy.SeccPurchase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="online-banking" />
       <extension name="coverage">
         <pattern>
@@ -133,8 +100,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="source.test" />
-      <option name="MAIN_CLASS_NAME" value="source.test.ItemTest" />
-      <option name="METHOD_NAME" value="testGetPrice" />
+      <option name="MAIN_CLASS_NAME" value="source.test.TestUserBuy" />
+      <option name="METHOD_NAME" value="SeccPurchase" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -155,7 +122,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserTest.testLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserTestSuite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="online-banking" />
       <extension name="coverage">
         <pattern>
@@ -164,20 +131,19 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="source.test" />
-      <option name="MAIN_CLASS_NAME" value="source.test.UserTest" />
-      <option name="METHOD_NAME" value="testLogin" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="source.test.UserTestSuite" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestUserBuy.SeccPurchase" />
         <item itemvalue="JUnit.UserTest" />
-        <item itemvalue="JUnit.UserTest.testLogin" />
-        <item itemvalue="JUnit.ItemTest.testGetPrice" />
-        <item itemvalue="JUnit.ItemTest.purchase" />
-        <item itemvalue="JUnit.ItemTest.getType" />
+        <item itemvalue="JUnit.TestUserBuy" />
+        <item itemvalue="JUnit.TestName.checkName" />
+        <item itemvalue="JUnit.UserTestSuite" />
       </list>
     </recent_temporary>
   </component>
