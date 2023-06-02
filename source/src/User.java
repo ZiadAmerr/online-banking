@@ -12,12 +12,21 @@ public class User {
     private Account account = null;
     private boolean loggedIn = false;
     private final Map<String, Integer> itemsInventory = new HashMap<>();
+    private static final ArrayList<User> users = new ArrayList<>();
 
     // Constructor
     public User(String name, String username, String password) {
         this.name = name;
         this.username = username;
         this.password = Helpers.getHash(password);
+    }
+
+    // Get User
+    public static User getUser(String username) {
+        for(User user : users)
+            if (user.getUsername().equals(username))
+                return user;
+        return null;
     }
 
     // User functions
