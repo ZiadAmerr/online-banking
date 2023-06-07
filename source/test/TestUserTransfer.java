@@ -81,6 +81,8 @@ public class TestUserTransfer {
         user2.createAccount("EGP", "Checking");
         int currAccNum = user1.getAccountNums().get(0);
         int otherAccNum = user2.getAccountNums().get(0);
+        user1.useAccount(currAccNum);
+        user2.useAccount(otherAccNum);
         assertTrue(user1.transfer(0, otherAccNum));
         assertTrue(user2.transfer(0, currAccNum));
 
@@ -127,6 +129,8 @@ public class TestUserTransfer {
         user2.createAccount("EGP", "Checking");
         int currAccNum = user1.getAccountNums().get(0);
         int otherAccNum = user2.getAccountNums().get(0);
+        user1.useAccount(currAccNum);
+        user2.useAccount(otherAccNum);
         assertThrows(IllegalArgumentException.class,
 
                 () -> user1.transfer(-12, otherAccNum));

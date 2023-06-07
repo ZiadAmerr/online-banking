@@ -1,5 +1,5 @@
 package source.test;
-
+import org.junit.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -34,10 +34,15 @@ public class TestUserUseAccount {
     @Test
     void testUnableUseAccount() {
         User user1 = new User("x","y","z");
+        assertTrue(user1.login("y", "z"));
+        assertTrue(user1.createAccount("EGP", "Checking"));
+        int acc1 = user1.getAccountNums().get(0);
+        assertTrue(user1.useAccount(acc1));
+
+
         User user2 = new User("temp","temp","temp");
         user2.login("temp","temp");
         user2.createAccount("EGP", "Checking");
-        int acc1 = user1.getAccountNums().get(0);
         int acc2 = user2.getAccountNums().get(0);
         assertFalse(user2.useAccount(acc1));
         assertTrue(user2.useAccount(acc2));

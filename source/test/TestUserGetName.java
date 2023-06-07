@@ -8,7 +8,7 @@ import source.src.User;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
 
-public class TestName {
+  class TestName {
     static User user;
 
     @Test

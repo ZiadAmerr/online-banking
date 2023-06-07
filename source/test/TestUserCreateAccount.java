@@ -37,7 +37,9 @@ public class TestUserCreateAccount {
     @Test
     void testCreateAnotherValidAccount() {
         User user1 = new User("x","y","z");
+        user1.login("y", "z");
         assertTrue(user1.createAccount("EGP", "Checking"));
+        assertTrue(user1.createAccount("USD", "Checking"));
         assertEquals(2, user1.getAccountNums().size());
         assertEquals(user1.getAccountNums().get(0) + 1, user1.getAccountNums().get(1));
     }

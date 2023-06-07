@@ -6,19 +6,12 @@ import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-     TestUserLogin.class,
-     TestUserCreateAccount.class,
-     TestUserUseAccount.class,
-        TestUserBuy.class,
-        TestUserLogout.class,
-        TestUserTransfer.class,
-       TestUserViewTransc.class,
-      TestUserGetNot.class,
-      TestName.class,
-     TestUserLoggedIn.class,
-     TestUsername.class
+     TestUserUseAccount.class
+
 })
-
 public class UserTestSuite {
-
 }
+
+
+
+

@@ -39,6 +39,14 @@ public class TestUserBuy {
     }
     @Test
     void SeccPurchase() {
+
+
+        user.login(USERNAME, PASSWORD);
+
+        user.createAccount("EGP", "Checking");
+
+        int accNum = user.getAccountNums().get(0);
+        user.useAccount(accNum);
         user.deposit(323);
         assertTrue(user.buy("cola"));
         assertEquals(1, user.hasHowManyItems("cola"));

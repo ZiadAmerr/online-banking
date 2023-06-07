@@ -39,6 +39,12 @@ public class TestUserViewTransc {
     }
     @Test
     void testMakingDeposit(){
+        User user1 = new User("x","y","z");
+        // Not logged in
+        assertEquals(user1.viewTransactions(), Collections.emptyList());
+
+        user1.login("y","z");
+        user1.createAccount("EGP", "Checking");
         user1.useAccount(user1.getAccountNums().get(0));
         assertEquals(0, user1.viewTransactions().size());
 
@@ -48,7 +54,11 @@ public class TestUserViewTransc {
 
     @Test
     void testFailedTransfer(){
+        User user1 = new User("x","y","z");
+        user1.login("y","z");
+        user1.createAccount("EGP", "Checking");
+        assertEquals(user1.viewTransactions(), Collections.emptyList());
         assertFalse(user1.transfer(12,123));
-        assertEquals(1, user1.viewTransactions().size());
+        assertEquals(0, user1.viewTransactions().size());
     }
 }

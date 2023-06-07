@@ -7,7 +7,7 @@ import source.src.User;
 
 import static org.junit.jupiter.api.Assertions.assertSame;
 
-public class TestUsername {
+  class TestUsername {
     static User user;
     private static final String USERNAME = "batman";
     private static final String PASSWORD = "pswd";
