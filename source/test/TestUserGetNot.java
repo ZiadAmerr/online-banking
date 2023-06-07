@@ -31,6 +31,7 @@ public class TestUserGetNot {
     }
     @Test
     void testReceiveNotifications(){
+        user1.login("y","z");
         user1.createAccount("EGP", "Checking");
         assertEquals(1, user1.getNotifications().size());
 
