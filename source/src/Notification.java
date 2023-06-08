@@ -14,15 +14,6 @@ public class Notification {
     }
 
 
-    // Getters
-    public String getMessage() {
-        return message;
-    }
-    public LocalDateTime getDateSent() {
-        return dateSent;
-    }
-
-
     // Data getter
     public NotificationData getData() {
         return new NotificationData(message, dateSent);
