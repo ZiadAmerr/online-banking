@@ -21,7 +21,7 @@ public class Notification {
     public LocalDateTime getDateSent() {
         return dateSent;
     }
-
+    
 
     // Data getter
     public NotificationData getData() {
