@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9326b27a-5c8f-43fe-83d7-f02f18b7c68f" name="Changes" comment="Fixed failing tests">
+    <list default="true" id="9326b27a-5c8f-43fe-83d7-f02f18b7c68f" name="Changes" comment="testing files">
+      <change afterPath="$PROJECT_DIR$/source/src/AccountTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +19,7 @@
         <option value="Interface" />
         <option value="Record" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -34,7 +35,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2QNmQfki1kwXiemUlVPonI0J8nf" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -47,89 +48,106 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/ziad/online-banking2",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
+    "git-widget-placeholder": "account__test",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.UserTest">
-    <configuration name="ItemTest.getType" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\online-banking\source\test" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="source.src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.AccountTest">
+    <configuration name="AccountTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="online-banking" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="source.test.*" />
+          <option name="PATTERN" value="source.src.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="source.test" />
-      <option name="MAIN_CLASS_NAME" value="source.test.ItemTest" />
-      <option name="METHOD_NAME" value="getType" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ItemTest.purchase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="online-banking" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="source.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="source.test" />
-      <option name="MAIN_CLASS_NAME" value="source.test.ItemTest" />
-      <option name="METHOD_NAME" value="purchase" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ItemTest.testGetPrice" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="online-banking" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="source.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="source.test" />
-      <option name="MAIN_CLASS_NAME" value="source.test.ItemTest" />
-      <option name="METHOD_NAME" value="testGetPrice" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="online-banking" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="source.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="source.test" />
-      <option name="MAIN_CLASS_NAME" value="source.test.UserTest" />
+      <option name="PACKAGE_NAME" value="source.src" />
+      <option name="MAIN_CLASS_NAME" value="source.src.AccountTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserTest.testLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AccountTest.getBills" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="online-banking" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="source.test.*" />
+          <option name="PATTERN" value="source.src.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="source.test" />
-      <option name="MAIN_CLASS_NAME" value="source.test.UserTest" />
-      <option name="METHOD_NAME" value="testLogin" />
+      <option name="PACKAGE_NAME" value="source.src" />
+      <option name="MAIN_CLASS_NAME" value="source.src.AccountTest" />
+      <option name="METHOD_NAME" value="getBills" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AccountTest.getBillsData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="online-banking" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="source.src.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="source.src" />
+      <option name="MAIN_CLASS_NAME" value="source.src.AccountTest" />
+      <option name="METHOD_NAME" value="getBillsData" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AccountTest.getNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="online-banking" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="source.src.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="source.src" />
+      <option name="MAIN_CLASS_NAME" value="source.src.AccountTest" />
+      <option name="METHOD_NAME" value="getNumber" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AccountTest.payNonExsBill" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="online-banking" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="source.src.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="source.src" />
+      <option name="MAIN_CLASS_NAME" value="source.src.AccountTest" />
+      <option name="METHOD_NAME" value="payNonExsBill" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -137,11 +155,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserTest" />
-        <item itemvalue="JUnit.UserTest.testLogin" />
-        <item itemvalue="JUnit.ItemTest.testGetPrice" />
-        <item itemvalue="JUnit.ItemTest.purchase" />
-        <item itemvalue="JUnit.ItemTest.getType" />
+        <item itemvalue="JUnit.AccountTest" />
+        <item itemvalue="JUnit.AccountTest.getNumber" />
+        <item itemvalue="JUnit.AccountTest.getBillsData" />
+        <item itemvalue="JUnit.AccountTest.getBills" />
+        <item itemvalue="JUnit.AccountTest.payNonExsBill" />
       </list>
     </recent_temporary>
   </component>
@@ -164,21 +182,14 @@
       <workItem from="1685665306161" duration="113000" />
       <workItem from="1685666280360" duration="18000" />
     </task>
-    <task id="LOCAL-00001" summary="Removed GUI">
-      <created>1685294886733</created>
+    <task id="LOCAL-00001" summary="testing files">
+      <created>1685540459185</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1685294886733</updated>
+      <updated>1685540459185</updated>
     </task>
-    <task id="LOCAL-00002" summary="Fixed failing tests">
-      <created>1685294910624</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1685294910624</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,8 +197,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Major update" />
-    <MESSAGE value="Removed GUI" />
-    <MESSAGE value="Fixed failing tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed failing tests" />
+    <MESSAGE value="testing files" />
+    <option name="LAST_COMMIT_MESSAGE" value="testing files" />
   </component>
 </project>
