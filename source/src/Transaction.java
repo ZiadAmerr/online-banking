@@ -53,21 +53,7 @@ public class Transaction {
     public int getFromAccountNumber() {
         return fromAccountNumber;
     }
-    public float getAmount() {
-        return amount;
-    }
-    public LocalDateTime getDate() {
-        return date;
-    }
-    public int getToAccount() {
-        return toAccount;
-    }
-    public boolean isToBuyable() {
-        return isToBuyable;
-    }
-    public String getBuyableName() {
-        return buyableName;
-    }
+
 
     // Data getter
     public TransactionData getData() {
