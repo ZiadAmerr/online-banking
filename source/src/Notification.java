@@ -12,9 +12,9 @@ public class Notification {
         this.message = message;
         this.dateSent = LocalDateTime.now();
     }
-    
-    
-        // Getters
+
+
+    // Getters
     public String getMessage() {
         return message;
     }
