@@ -1,36 +1,30 @@
 package source.test;
 
+import static org.junit.Assert.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import source.src.User;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import source.src.*;
 
 public class TestUserLogin {
-    static User user;
+
     private static final String USERNAME = "batman";
     private static final String PASSWORD = "pswd";
+    static User user = new User("Bruce", USERNAME, PASSWORD);
 
-    @BeforeAll
-    static void setUp() {
-        user =  new User("Bruce", USERNAME, PASSWORD);
-    }
 
-    @AfterEach
-    void breakUp(){
-        user.logout();
-    }
 
     @Test
-    void testLoginCorrectPass() {
+    public void testLoginCorrectPass() {
         assertFalse(user.isLoggedIn());
         assertTrue(user.login(USERNAME, PASSWORD));
         assertTrue(user.isLoggedIn());
     }
     @Test
-    void testLoginWrongPass(){
+    public void testLoginWrongPass(){
+        user.logout();
         assertFalse(user.isLoggedIn());
         assertFalse(user.login(USERNAME, "Pswd"));
         assertFalse(user.isLoggedIn());

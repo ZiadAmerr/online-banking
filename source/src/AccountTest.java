@@ -4,7 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
-
+import java.util.Objects;
 import java.util.function.BooleanSupplier;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -14,7 +14,7 @@ class AccountTest {
     Account acc1;
     static int accNum = 0;
     @BeforeEach
-    void SetUp(){
+    void SetUp() {
         user = new User("ahmed","ahmed","ah");
         acc1 = new Account(user,"EGP","Savings");
         user.login("ahmed","ah");
@@ -57,7 +57,7 @@ class AccountTest {
 
     @Test
     void withdrawNegative(){
-        assertThrows(IllegalAccessError.class,()->acc1.withdraw(-43));
+        assertThrows(IllegalArgumentException.class,()->acc1.withdraw(-43));
     }
 
 
@@ -123,7 +123,7 @@ class AccountTest {
     @Test
     void getData() {
         AccountData ad = acc1.getData();
-        assertTrue(ad.number()==accNum&&ad.currency()=="EGP"&&ad.balance()==0&&ad.type()=="Savings");
+        assertTrue(ad.number()==accNum&& Objects.equals(ad.currency(), "EGP") &&ad.balance()==0&& Objects.equals(ad.type(), "Savings"));
     }
 
     @Test
@@ -133,9 +133,9 @@ class AccountTest {
         assertEquals(1, acc1.getBills().size());
     }
     @Test
-    void addBillOtherAccount(){
+    void addBillOtherAccount() {
         Bill b = new Bill("cola",32,-32);
-        acc1.addBill(b);
+        assertThrows(IllegalArgumentException.class, ()->acc1.addBill(b));
         assertEquals(0, acc1.getBills().size());
     }
 
@@ -166,10 +166,10 @@ class AccountTest {
     }
     @Test
     void payBillWithNoBalance(){
-        Bill b = new Bill("cola",32,0);
+        Bill b = new Bill("cola", 32, acc1.getNumber());
         acc1.addBill(b);
-        acc1.payBill("cola");
-        assertTrue(acc1.hasUnpaidBill("cola"));
+        assertTrue(acc1.payBill("cola"));
+        assertFalse(acc1.hasUnpaidBill("cola"));
     }
 
     @Test

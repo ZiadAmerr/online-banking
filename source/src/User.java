@@ -46,10 +46,10 @@ public class User {
             return false;
 
         if (!currency.equals("EGP") && !currency.equals("USD"))
-            return false;
+            throw new IllegalArgumentException("Currency must be either EGP or USD");
 
         if (!type.equals("Checking") && !type.equals("Savings"))
-            return false;
+            throw new IllegalArgumentException("Account type must be either Checking or Savings");
 
         Account createdAccount = new Account(this, currency, type);
         accounts.add(createdAccount);
@@ -305,11 +305,15 @@ public class User {
 
         return acc.getBills();
     }
-
     public List<Bill> getBills() {
         if (!loggedIn || account == null)
             return Collections.emptyList();
         return account.getBills();
+    }
+    public int getAccountNumber() {
+        if (!loggedIn || account == null)
+            return -1;
+        return account.getNumber();
     }
 
 

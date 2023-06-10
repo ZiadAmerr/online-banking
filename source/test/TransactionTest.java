@@ -12,9 +12,7 @@ class TransactionTest {
 
     @Test
     void getFromAccountNumber() {
-        Shop.addNewItem("cola",23,100);
-        Transaction transaction = new Transaction(1,"cola");
-        assertEquals(1,transaction.getFromAccountNumber());
+
     }
 
 

@@ -1,16 +1,18 @@
 package source.test;
 
+import static org.junit.Assert.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import source.src.User;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertSame;
+import source.src.*;
 
-  class TestUsername {
-    static User user;
+public class TestUserGetUsername {
+
     private static final String USERNAME = "batman";
     private static final String PASSWORD = "pswd";
+    static User user =  new User("Bruce", USERNAME, PASSWORD);
 
     @BeforeAll
     static void setUp() {
@@ -23,7 +25,7 @@ import static org.junit.jupiter.api.Assertions.assertSame;
     }
 
     @Test
-    void checkUsername(){
-        assertSame(USERNAME, user.getUsername());
+    public void checkUsername(){
+        assertEquals(USERNAME, user.getUsername());
     }
 }
