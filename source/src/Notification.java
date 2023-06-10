@@ -12,7 +12,16 @@ public class Notification {
         this.message = message;
         this.dateSent = LocalDateTime.now();
     }
-
+    
+    
+        // Getters
+    public String getMessage() {
+        return message;
+    }
+    public LocalDateTime getDateSent() {
+        return dateSent;
+    }
+    
 
     // Data getter
     public NotificationData getData() {
