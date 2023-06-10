@@ -1,36 +1,41 @@
 package source.test;
 
+import static org.junit.Assert.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import source.src.Shop;
-import source.src.User;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import source.src.*;
 
 public class TestUserBuy {
-    static User user;
     private static final String USERNAME = "batman";
     private static final String PASSWORD = "pswd";
+    static User user = new User("Bruce", USERNAME, PASSWORD);
+
+
+    User user1 = new User("x","y","z");
 
     @BeforeAll
     static void setUp() {
-        user =  new User("Bruce", USERNAME, PASSWORD);
+        user.login(USERNAME, PASSWORD);
     }
 
     @AfterEach
-    void breakUp(){
+    public void breakUp(){
         user.logout();
     }
 
     @Test
-    void UnseccPurchase() {
+    public void testUnsuccessfulPurchase() {
         Shop.addNewItem("cola", 3, 100);
+
+        assertNotNull(user);
 
         user.login(USERNAME, PASSWORD);
 
-        user.createAccount("EGP", "Checking");
+        assertTrue(user.createAccount("EGP", "Checking"));
+        assertEquals(1, user.getAccountNums().size());
 
         int accNum = user.getAccountNums().get(0);
         user.useAccount(accNum);
@@ -38,7 +43,7 @@ public class TestUserBuy {
         assertFalse(user.buy("cola"));
     }
     @Test
-    void SeccPurchase() {
+    public void testSuccessfulPurchase() {
 
 
         user.login(USERNAME, PASSWORD);

@@ -1,13 +1,14 @@
 package source.test;
 
+import static org.junit.Assert.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import source.src.User;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.Test;
+
+import source.src.*;
 
 import java.util.Collections;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 public class TestUserViewTransc {
     static User user;
@@ -26,11 +27,11 @@ public class TestUserViewTransc {
     }
 
     @Test
-    void testNotLoggedIn(){
+    public void testNotLoggedIn(){
         assertEquals(user1.viewTransactions(), Collections.emptyList());
     }
     @Test
-    void testNotUsedAcc(){
+    public void testNotUsedAcc(){
         user1.login("y","z");
         user1.createAccount("EGP", "Checking");
 
@@ -38,7 +39,7 @@ public class TestUserViewTransc {
 
     }
     @Test
-    void testMakingDeposit(){
+    public void testMakingDeposit(){
         User user1 = new User("x","y","z");
         // Not logged in
         assertEquals(user1.viewTransactions(), Collections.emptyList());
@@ -53,7 +54,7 @@ public class TestUserViewTransc {
     }
 
     @Test
-    void testFailedTransfer(){
+    public void testFailedTransfer(){
         User user1 = new User("x","y","z");
         user1.login("y","z");
         user1.createAccount("EGP", "Checking");

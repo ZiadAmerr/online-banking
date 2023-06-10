@@ -5,8 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9326b27a-5c8f-43fe-83d7-f02f18b7c68f" name="Changes" comment="testing files">
-      <change afterPath="$PROJECT_DIR$/source/src/AccountTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/src/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/src/AccountTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/AccountTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/src/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/src/TransactionData.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/TransactionData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/test/TestUserBuy.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/TestUserBuy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/test/TestUserCreateAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/TestUserCreateAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/test/TestUserGetName.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/TestUserGetName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/test/TestUserGetNot.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/TestUserGetNotifications.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/test/TestUserGetUsername.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/TestUserGetUsername.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/test/TestUserLoggedIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/TestUserLoggedIn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/test/TestUserLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/TestUserLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/test/TestUserLogout.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/TestUserLogout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/test/TestUserTransfer.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/TestUserTransfer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/test/TestUserUseAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/TestUserUseAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/test/TestUserViewTransc.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/TestUserViewTransc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/test/TransactionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/TransactionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/test/UserTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/UserTestSuite.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,26 +59,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "create.test.in.the.same.root": "true",
-    "git-widget-placeholder": "account__test",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;account__test&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\online-banking\source\test" />
@@ -73,7 +91,7 @@
       <recent name="source.src" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AccountTest">
+  <component name="RunManager" selected="JUnit.UserTest">
     <configuration name="AccountTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="online-banking" />
       <extension name="coverage">
@@ -89,77 +107,74 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AccountTest.getBills" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestUserLoggedIn.testIsNotLoggedIn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="online-banking" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="source.src.*" />
+          <option name="PATTERN" value="source.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="source.src" />
-      <option name="MAIN_CLASS_NAME" value="source.src.AccountTest" />
-      <option name="METHOD_NAME" value="getBills" />
+      <option name="PACKAGE_NAME" value="source.test" />
+      <option name="MAIN_CLASS_NAME" value="source.test.TestUserLoggedIn" />
+      <option name="METHOD_NAME" value="testIsNotLoggedIn" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AccountTest.getBillsData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestUserLogout" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="online-banking" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="source.src.*" />
+          <option name="PATTERN" value="source.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="source.src" />
-      <option name="MAIN_CLASS_NAME" value="source.src.AccountTest" />
-      <option name="METHOD_NAME" value="getBillsData" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="source.test" />
+      <option name="MAIN_CLASS_NAME" value="source.test.TestUserLogout" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AccountTest.getNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="online-banking" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="source.src.*" />
+          <option name="PATTERN" value="source.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="source.src" />
-      <option name="MAIN_CLASS_NAME" value="source.src.AccountTest" />
-      <option name="METHOD_NAME" value="getNumber" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="source.test" />
+      <option name="MAIN_CLASS_NAME" value="source.test.UserTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AccountTest.payNonExsBill" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserTestSuite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="online-banking" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="source.src.*" />
+          <option name="PATTERN" value="source.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="source.src" />
-      <option name="MAIN_CLASS_NAME" value="source.src.AccountTest" />
-      <option name="METHOD_NAME" value="payNonExsBill" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="source.test" />
+      <option name="MAIN_CLASS_NAME" value="source.test.UserTestSuite" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserTest" />
         <item itemvalue="JUnit.AccountTest" />
-        <item itemvalue="JUnit.AccountTest.getNumber" />
-        <item itemvalue="JUnit.AccountTest.getBillsData" />
-        <item itemvalue="JUnit.AccountTest.getBills" />
-        <item itemvalue="JUnit.AccountTest.payNonExsBill" />
+        <item itemvalue="JUnit.UserTestSuite" />
+        <item itemvalue="JUnit.TestUserLogout" />
+        <item itemvalue="JUnit.TestUserLoggedIn.testIsNotLoggedIn" />
       </list>
     </recent_temporary>
   </component>
@@ -181,6 +196,7 @@
       <workItem from="1685314897990" duration="850000" />
       <workItem from="1685665306161" duration="113000" />
       <workItem from="1685666280360" duration="18000" />
+      <workItem from="1686401679032" duration="1250000" />
     </task>
     <task id="LOCAL-00001" summary="testing files">
       <created>1685540459185</created>

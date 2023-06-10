@@ -1,15 +1,16 @@
 package source.test;
 
+import static org.junit.Assert.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import source.src.User;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import source.src.*;
 
 public class TestUserTransfer {
     static User user;
+    static float DELTA = 0.001f;
     private static final String USERNAME = "batman";
     private static final String PASSWORD = "pswd";
 
@@ -26,7 +27,7 @@ public class TestUserTransfer {
 
 
     @Test
-    void testNoExictNum(){
+    public void testNoExictNum(){
         User user1 = new User("x","y","z");
         User user2 = new User("temp","temp","temp");
 
@@ -41,7 +42,7 @@ public class TestUserTransfer {
         assertFalse(user1.transfer(12, 1324));
     }
     @Test
-    void testNotEnoughMoney(){
+    public void testNotEnoughMoney(){
         User user1 = new User("x","y","z");
         User user2 = new User("temp","temp","temp");
 
@@ -55,7 +56,7 @@ public class TestUserTransfer {
         assertFalse(user1.transfer(12, otherAccNum));
     }
     @Test
-    void testNotusingAcc(){
+    public void testNotusingAcc(){
         User user1 = new User("x","y","z");
         User user2 = new User("temp","temp","temp");
 
@@ -70,7 +71,7 @@ public class TestUserTransfer {
         assertFalse(user2.transfer(0, currAccNum));
     }
     @Test
-    void testUseAcc(){
+    public void testUseAcc(){
         User user1 = new User("x","y","z");
         User user2 = new User("temp","temp","temp");
 
@@ -90,35 +91,35 @@ public class TestUserTransfer {
         assertFalse(user1.transfer(12, otherAccNum));
 
         user1.deposit(24);
-        assertEquals(24, user1.getBalance());
-        assertEquals(0, user2.getBalance());
+        assertEquals(24, user1.getBalance(), DELTA);
+        assertEquals(0, user2.getBalance(), DELTA);
 
         assertTrue(user1.transfer(12, otherAccNum));
-        assertEquals(12, user1.getBalance());
-        assertEquals(12, user2.getBalance());
+        assertEquals(12, user1.getBalance(), DELTA);
+        assertEquals(12, user2.getBalance(), DELTA);
 
         assertTrue(user1.transfer(12, otherAccNum));
-        assertEquals(0, user1.getBalance());
-        assertEquals(24, user2.getBalance());
+        assertEquals(0, user1.getBalance(), DELTA);
+        assertEquals(24, user2.getBalance(), DELTA);
 
         assertFalse(user1.transfer(12, otherAccNum));
-        assertEquals(0, user1.getBalance());
-        assertEquals(24, user2.getBalance());
+        assertEquals(0, user1.getBalance(), DELTA);
+        assertEquals(24, user2.getBalance(), DELTA);
 
         assertTrue(user2.transfer(12, currAccNum));
-        assertEquals(12, user1.getBalance());
-        assertEquals(12, user2.getBalance());
+        assertEquals(12, user1.getBalance(), DELTA);
+        assertEquals(12, user2.getBalance(), DELTA);
 
         assertTrue(user2.transfer(12, currAccNum));
-        assertEquals(24, user1.getBalance());
-        assertEquals(0, user2.getBalance());
+        assertEquals(24, user1.getBalance(), DELTA);
+        assertEquals(0, user2.getBalance(), DELTA);
 
         assertFalse(user2.transfer(12, currAccNum));
-        assertEquals(24, user1.getBalance());
-        assertEquals(0, user2.getBalance());
+        assertEquals(24, user1.getBalance(), DELTA);
+        assertEquals(0, user2.getBalance(), DELTA);
     }
     @Test
-    void IllegalException(){
+    public void IllegalException(){
         User user1 = new User("x","y","z");
         User user2 = new User("temp","temp","temp");
 

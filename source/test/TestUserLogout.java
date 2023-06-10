@@ -1,21 +1,22 @@
 package source.test;
 
+import static org.junit.Assert.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import source.src.User;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import source.src.*;
 
 public class TestUserLogout {
-    static User user;
     private static final String USERNAME = "batman";
     private static final String PASSWORD = "pswd";
+    static User user = new User("Bruce", USERNAME, PASSWORD);
 
-    @BeforeAll
+
+    @BeforeEach
     static void setUp() {
-        user =  new User("Bruce", USERNAME, PASSWORD);
+        user.login(USERNAME,PASSWORD);
     }
 
     @AfterEach
@@ -25,12 +26,13 @@ public class TestUserLogout {
 
 
     @Test
-    void SuccLogout() {
+    public void SuccLogout() {
         user.login(USERNAME, PASSWORD);
         assertTrue(user.isLoggedIn());
     }
     @Test
-    void FailedLogout() {
+    public void FailedLogout() {
+        user.logout();
         assertFalse(user.isLoggedIn());
     }
 }

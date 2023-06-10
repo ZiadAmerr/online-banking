@@ -9,10 +9,13 @@ public class Transaction {
     private final int toAccount;
     private final boolean isToBuyable;
     private final String buyableName;
+    private final String type;
+    private static int counter = 0;
+    private final int id;
 
 
     // Constructors
-    public Transaction(float amount, int fromAccount, int toAccount) {
+    public Transaction(String type, float amount, int fromAccount, int toAccount) {
         if (amount < 0)
             throw new IllegalArgumentException("Amount must be positive");
 
@@ -28,8 +31,10 @@ public class Transaction {
         this.toAccount = toAccount;
         this.isToBuyable = false;
         this.buyableName = null;
+        this.type = type;
+        this.id = ++counter;
     }
-    public Transaction(int fromAccount, String toBuyable) {
+    public Transaction(String type, int fromAccount, String toBuyable) {
         if (toBuyable == null || toBuyable.equals(""))
             throw new IllegalArgumentException("Name cannot be empty");
 
@@ -47,6 +52,8 @@ public class Transaction {
         this.toAccount = -1;
         this.isToBuyable = true;
         this.buyableName = toBuyable;
+        this.type = type;
+        this.id = ++counter;
     }
 
     // getters
@@ -58,11 +65,13 @@ public class Transaction {
     // Data getter
     public TransactionData getData() {
         return new TransactionData(
-            fromAccountNumber,
-            amount,
-            date,
-            toAccount,
-            isToBuyable,
-            buyableName);
+                type,
+                id,
+                fromAccountNumber,
+                amount,
+                date,
+                toAccount,
+                isToBuyable,
+                buyableName);
     }
 }

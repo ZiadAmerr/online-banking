@@ -1,19 +1,18 @@
 package source.test;
 
+import static org.junit.Assert.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import source.src.User;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertSame;
+import source.src.*;
 
-  class TestName {
-    static User user;
+public class TestUserGetName {
 
     @Test
-    void checkName(){
-        user = new User("Bruce","b","f");
+    public void checkName(){
+        User user = new User("Bruce","b","f");
         assertSame("Bruce", user.getName());
     }
 }

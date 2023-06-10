@@ -1,44 +1,43 @@
 package source.test;
 
+import static org.junit.Assert.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import source.src.User;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import source.src.*;
 
 public class TestUserLoggedIn {
-    static User user;
+
     private static final String USERNAME = "batman";
     private static final String PASSWORD = "pswd";
+    static User user = new User("Bruce", USERNAME, PASSWORD);
 
-    @BeforeAll
-    static void setUp() {
-        user =  new User("Bruce", USERNAME, PASSWORD);
-    }
+
+
 
     @AfterEach
     void breakUp(){
         user.logout();
     }
-
     @Test
-    void testIsNotLoggedIn(){
-        assertFalse(user.isLoggedIn());
-    }
-    @Test
-    void testLoggedIn(){
-        user.login(USERNAME, PASSWORD);
-        assertTrue(user.isLoggedIn());
-    }
-    @Test
-    void testLoggingOut(){
+    public void testIsNotLoggedIn(){
         user.logout();
         assertFalse(user.isLoggedIn());
     }
     @Test
-    void testUnseccLogin(){
+    public void testLoggedIn(){
+        user.login(USERNAME, PASSWORD);
+        assertTrue(user.isLoggedIn());
+    }
+    @Test
+    public void testLoggingOut(){
+        user.logout();
+        assertFalse(user.isLoggedIn());
+    }
+    @Test
+    public void testUnseccLogin(){
         user.login(USERNAME, "Pswd");
         assertFalse(user.isLoggedIn());
     }

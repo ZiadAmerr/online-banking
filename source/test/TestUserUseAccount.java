@@ -1,12 +1,12 @@
 package source.test;
-import org.junit.*;
+
+import static org.junit.Assert.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import source.src.User;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import source.src.*;
 
 public class TestUserUseAccount {
     static User user;
@@ -24,7 +24,7 @@ public class TestUserUseAccount {
     }
 
     @Test
-    void testCorrectUseAccount() {
+    public void testCorrectUseAccount() {
         User user1 = new User("x","y","z");
         assertTrue(user1.login("y", "z"));
         assertTrue(user1.createAccount("EGP", "Checking"));
@@ -32,7 +32,7 @@ public class TestUserUseAccount {
         assertTrue(user1.useAccount(acc1));
     }
     @Test
-    void testUnableUseAccount() {
+    public void testUnableUseAccount() {
         User user1 = new User("x","y","z");
         assertTrue(user1.login("y", "z"));
         assertTrue(user1.createAccount("EGP", "Checking"));

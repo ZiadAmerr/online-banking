@@ -3,12 +3,14 @@ package source.src;
 import java.time.LocalDateTime;
 
 public record TransactionData(
-    int fromAccountNumber,
-    float amount,
-    LocalDateTime date,
-    int toAccount,
-    boolean isToBuyable,
-    String buyableName
+        String type,
+        int id,
+        int fromAccountNumber,
+        float amount,
+        LocalDateTime date,
+        int toAccount,
+        boolean isToBuyable,
+        String buyableName
 ) {
     public int getFromAccountNumber() {
         return fromAccountNumber;
@@ -27,5 +29,11 @@ public record TransactionData(
     }
     public String getBuyableName() {
         return buyableName;
+    }
+    public String getType() {
+        return type;
+    }
+    public int getId() {
+        return id;
     }
 }

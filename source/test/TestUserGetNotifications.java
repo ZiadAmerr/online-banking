@@ -1,22 +1,25 @@
 package source.test;
 
+import static org.junit.Assert.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import source.src.User;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import source.src.*;
 
-public class TestUserGetNot {
-    static User user;
+public class TestUserGetNotifications {
+
     private static final String USERNAME = "batman";
     private static final String PASSWORD = "pswd";
+    static User user  =new User("Bruce", USERNAME, PASSWORD);
+
     User user1 = new User("x","y","z");
 
 
     @BeforeAll
     static void setUp() {
-        user =  new User("Bruce", USERNAME, PASSWORD);
+        user.login( USERNAME, PASSWORD);
     }
 
     @AfterEach
@@ -25,12 +28,12 @@ public class TestUserGetNot {
     }
 
     @Test
-    void testNoNotifications(){
-        user1.login("y","z");
+    public void testNoNotifications(){
+        user.login("y","z");
         assertEquals(0, user1.getNotifications().size());
     }
     @Test
-    void testReceiveNotifications(){
+    public void testReceiveNotifications(){
         user1.login("y","z");
         user1.createAccount("EGP", "Checking");
         assertEquals(1, user1.getNotifications().size());
