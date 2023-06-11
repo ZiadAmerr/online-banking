@@ -1,6 +1,7 @@
 package source.src;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class Account {
@@ -16,7 +17,7 @@ public class Account {
 
 
     // Constructor
-    Account(User user, String currency, String type) {
+    public Account(User user, String currency, String type) {
         number = counter++;
         balance = 0;
         this.user = user;
@@ -71,10 +72,10 @@ public class Account {
         transactions.add(new Transaction("Money Transfer", amount, this.getNumber(), otherAccountNumber));
     }
     public void transact(String name) {
-        if (!Shop.itemExisted(name))
-            throw new IllegalArgumentException(String.format("Item with name %s does not exist", name));
-
         transactions.add(new Transaction("Payment", this.getNumber(), name));
+    }
+    public void sendNotification(Notification notification) {
+        user.getNotifications().add(notification);
     }
 
 
@@ -105,7 +106,7 @@ public class Account {
                 type
         );
     }
-    void addBill(Bill bill) {
+    public void addBill(Bill bill) {
         Account account = Account.getAccountByNumber(bill.getAccountNumber());
         if (account == null)
             throw new IllegalArgumentException("Account does not exist");

@@ -1,8 +1,9 @@
-package source.src;
+package source.test;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
+import source.src.Buyable;
 
 import static org.junit.Assert.*;
 

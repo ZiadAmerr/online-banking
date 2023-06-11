@@ -106,4 +106,15 @@ public class Shop {
 
         return bill.getPrice();
     }
+
+    public static List<ItemData> getAllItemsData() {
+        return items.entrySet()
+                .stream()
+                .map(entry -> new ItemData(
+                        entry.getKey().getName(),
+                        entry.getKey().getPrice(),
+                        entry.getValue())
+                )
+                .toList();
+    }
 }

@@ -1,7 +1,8 @@
-package source.src;
+package source.test;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import source.src.*;
 
 
 import java.util.Objects;

@@ -46,10 +46,10 @@ public class User {
             return false;
 
         if (!currency.equals("EGP") && !currency.equals("USD"))
-            throw new IllegalArgumentException("Currency must be either EGP or USD");
+            return false;
 
         if (!type.equals("Checking") && !type.equals("Savings"))
-            throw new IllegalArgumentException("Account type must be either Checking or Savings");
+            return false;
 
         Account createdAccount = new Account(this, currency, type);
         accounts.add(createdAccount);
@@ -61,7 +61,7 @@ public class User {
     public boolean useAccount(int number) {
         if (!loggedIn)
             return false;
-        
+
         for(Account curr_account : accounts)
             if (curr_account.getNumber() == number) {
                 account = curr_account;
@@ -73,6 +73,14 @@ public class User {
     }
     public void logout() {
         loggedIn = false;
+    }
+    public static boolean signUp(String firstName, String lastName, String username, String password) {
+        if (getUser(username) != null)
+            return false;
+
+        User createdUser = new User(firstName + " " + lastName, username, password);
+        users.add(createdUser);
+        return true;
     }
 
     // Account functions
@@ -179,12 +187,40 @@ public class User {
         }
 
         if (account.withdraw(amount)) {
-            toAcc.deposit(Helpers.convert(account.getCurrency(), toAcc.getCurrency(), amount));
-            notifications.add(
-                    new Notification("You transferred " + amount + " to " + toAcc.getUsername())
+            float amountInToAccCurrency = Helpers.convert(account.getCurrency(), toAcc.getCurrency(), amount);
+            toAcc.deposit(amountInToAccCurrency);
+            Notification notificationSender, notificationReceiver;
+
+            notificationSender = new Notification(
+                    String.format(
+                            "You transferred %.2f%s%s to %s (%d)",
+                            amount,
+                            getCurrency(),
+                            !toAcc.getCurrency().equals(getCurrency()) ? String.format(" (%.2f%s)", amountInToAccCurrency, toAcc.getCurrency()) : "",
+                            toAcc.getUsername(),
+                            toAcc.getNumber()
+                    )
             );
 
+
+            notificationReceiver = new Notification(
+                String.format(
+                    "You received %.2f%s%s from %s (%d)",
+                    amountInToAccCurrency,
+                    toAcc.getCurrency(),
+                    !account.getCurrency().equals(toAcc.getCurrency()) ? String.format(" (%.2f%s)", amount, account.getCurrency()) : "",
+                    account.getUsername(),
+                    account.getNumber()
+                )
+            );
+
+
             account.transact(amount, account.getNumber());
+
+            notifications.add(notificationSender);
+            toAcc.sendNotification(notificationReceiver);
+
+            toAcc.transact(amount, account.getNumber());
 
             return true;
         } else {
@@ -215,7 +251,7 @@ public class User {
 
         account.deposit(amount);  // account.balance += amount
         notifications.add(
-                new Notification("You deposited " + amount + " to your account")
+                new Notification("You deposited " + amount + getCurrency() + " to your account")
         );
 
         account.transact(amount, account.getNumber());
@@ -265,9 +301,9 @@ public class User {
         // 2. Check if the user is using an account.
         // 3. Return the transactions of the user's account.
         // 4. Return null if the user is not logged in or is not using an account.
-         if (!loggedIn || account == null)
-             return Collections.emptyList();
-         return account.getTransactions();
+        if (!loggedIn || account == null)
+            return Collections.emptyList();
+        return account.getTransactions();
     }
     public List<Notification> getNotifications() {
         return notifications;
@@ -281,6 +317,13 @@ public class User {
     public String getUsername() {
         return username;
     }
+
+    public int getAccountNumber() {
+        if (!loggedIn || account == null)
+            return -1;
+        return account.getNumber();
+    }
+
     public int hasHowManyItems(String name) {
         return itemsInventory.getOrDefault(name, 0);
     }
@@ -310,10 +353,11 @@ public class User {
             return Collections.emptyList();
         return account.getBills();
     }
-    public int getAccountNumber() {
-        if (!loggedIn || account == null)
-            return -1;
-        return account.getNumber();
+    public String getCurrency(){
+        if (account == null)
+            return null;
+
+        return account.getCurrency();
     }
 
 
@@ -348,5 +392,19 @@ public class User {
                 .map(entry -> new InventoryData(entry.getKey(), entry.getValue()))
                 .toList();
     }
-    
+    public List<ItemData> getItemsData() {
+        return itemsInventory.entrySet()
+                .stream()
+                .map(entry -> new ItemData(
+                        entry.getKey(),
+                        Shop.getItemPrice(entry.getKey()),
+                        entry.getValue()))
+                .toList();
+    }
+    public List<BillData> getUnpaidBills() {
+        return accounts.stream()
+                .map(Account::getBillsData)
+                .flatMap(List::stream)
+                .toList();
+    }
 }

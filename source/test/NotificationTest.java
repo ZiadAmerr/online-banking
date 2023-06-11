@@ -1,10 +1,10 @@
-package source.src;
+package source.test;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.time.LocalDateTime;
+import source.src.Notification;
+import source.src.NotificationData;
 
 import static org.junit.Assert.*;
 
@@ -29,12 +29,4 @@ public class NotificationTest {
         assertEquals(message, data.getMessage());
         assertNotNull(data.getDateSent());
     }
-
-
-
-
-
-
-
-
 }

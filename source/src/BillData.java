@@ -1,5 +1,4 @@
 package source.src;
-
 public record BillData(
         String name,
         float price,
