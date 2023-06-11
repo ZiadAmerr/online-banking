@@ -2,6 +2,7 @@ package source.test;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -20,13 +21,14 @@ public class AccountTest {
     private static final String PASSWORD = "pswd";
 
 
-    @BeforeEach
-    void SetUp() {
+    @Before
+    public void SetUp() {
         user = new User("ahmed","ahmed","ah");
         acc1 = new Account(user,"EGP","Savings");
         user.login("ahmed","ah");
         accNum++;
     }
+
 
     @Test
     public void getAccountByNumber() {
@@ -42,7 +44,7 @@ public class AccountTest {
     @Test
     public void deposit() {
         acc1.deposit(23);
-        assertEquals(23,acc1.getBalance());
+        assertEquals(23,acc1.getBalance(),DELTA);
     }
 
     @Test
@@ -54,7 +56,7 @@ public class AccountTest {
     public void withdraw() {
         acc1.deposit(234);
         acc1.withdraw(acc1.getBalance());
-        assertEquals(0,acc1.getBalance());
+        assertEquals(0,acc1.getBalance(),DELTA);
     }
     @Test
     public void withdrawExceedBalance(){
@@ -96,7 +98,7 @@ public class AccountTest {
     @Test
     public void getBalance() {
         acc1.deposit(33);
-        assertEquals(33,acc1.getBalance());
+        assertEquals(33,acc1.getBalance(),DELTA);
     }
 
     @Test
@@ -124,6 +126,7 @@ public class AccountTest {
 
     @Test
     public void getCurrency() {
+
         assertEquals("EGP",acc1.getCurrency());
     }
 
@@ -201,7 +204,7 @@ public class AccountTest {
         acc1.addBill(b);
         BillData bd = acc1.getBillsData().get(0);
         assertEquals("cola",bd.getName());
-        assertEquals(32,bd.getPrice());
+        assertEquals(32,bd.getPrice(),DELTA);
         assertEquals(0,bd.accountNumber());
         assertFalse(bd.getIsPaid());
 

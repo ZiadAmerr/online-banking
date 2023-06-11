@@ -6,12 +6,13 @@ import source.src.User;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
+        AccountTest.class,
         UserTestSuite.class,
         BillTest.class,
         ItemTest.class,
         BuyableTest.class,
         NotificationTest.class,
         TransactionTest.class,
-        AccountTest.class,
+
 })
 public class ProjectTestSuite { }

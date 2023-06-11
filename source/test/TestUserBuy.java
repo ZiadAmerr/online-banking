@@ -28,7 +28,7 @@ public class TestUserBuy {
 
     @Test
     public void testUnsuccessfulPurchase() {
-        Shop.addNewItem("cola", 3, 100);
+        Shop.addNewItem("coca", 3, 100);
 
         assertNotNull(user);
 
@@ -53,12 +53,12 @@ public class TestUserBuy {
         int accNum = user.getAccountNums().get(0);
         user.useAccount(accNum);
         user.deposit(323);
-        assertTrue(user.buy("cola"));
-        assertEquals(1, user.hasHowManyItems("cola"));
-        assertTrue(user.buy("cola"));
-        assertTrue(user.buy("cola"));
-        assertFalse(user.buy("cola"));
-        assertEquals(3, user.hasHowManyItems("cola"));
+        assertTrue(user.buy("coca"));
+        assertEquals(1, user.hasHowManyItems("coca"));
+        assertTrue(user.buy("coca"));
+        assertTrue(user.buy("coca"));
+        assertFalse(user.buy("coca"));
+        assertEquals(3, user.hasHowManyItems("coca"));
         assertEquals(0, user.hasHowManyItems("pepsi"));
 
     }
