@@ -48,14 +48,14 @@ public class TransactionTest {
     }
 
     @Test
-    public void testGetTransactionData() {
+    public void testGetTransactionDataNotNull() {
         Transaction transaction = new Transaction("Transferral", 100, 0, 1);
         TransactionData actualTransactionData = transaction.getData();
         assertNotNull(actualTransactionData);
     }
 
     @Test
-    public void testGetTransactionData2() {
+    public void testGetTransactionData() {
         Transaction transaction = new Transaction("Transferral", 100, 0, 1);
         TransactionData actualTransactionData = transaction.getData();
         assertEquals("Transferral", actualTransactionData.getType());

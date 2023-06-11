@@ -6,13 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="9326b27a-5c8f-43fe-83d7-f02f18b7c68f" name="Changes" comment="Last major update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/src/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/src/AccountTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/AccountTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/src/BillTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/BillTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/src/BuyableTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/BuyableTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/src/NotificationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/NotificationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/test/ItemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/ItemTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/src/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/Shop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/test/AccountTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/AccountTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/test/NotificationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/NotificationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/test/ProjectTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/ProjectTestSuite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/test/TransactionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/TransactionTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,51 +79,6 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.ProjectTestSuite">
-    <configuration name="AccountTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="online-banking" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="source.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="source.test" />
-      <option name="MAIN_CLASS_NAME" value="source.test.AccountTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BillTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="online-banking" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="source.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="source.test" />
-      <option name="MAIN_CLASS_NAME" value="source.test.BillTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="NotificationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="online-banking" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="source.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="source.test" />
-      <option name="MAIN_CLASS_NAME" value="source.test.NotificationTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ProjectTestSuite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="online-banking" />
       <extension name="coverage">
@@ -142,7 +94,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TransactionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ShopTestSuite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="online-banking" />
       <extension name="coverage">
         <pattern>
@@ -151,7 +103,52 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="source.test" />
-      <option name="MAIN_CLASS_NAME" value="source.test.TransactionTest" />
+      <option name="MAIN_CLASS_NAME" value="source.test.ShopTestSuite" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestShopBill" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="online-banking" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="source.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="source.test" />
+      <option name="MAIN_CLASS_NAME" value="source.test.TestShopBill" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestShopData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="online-banking" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="source.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="source.test" />
+      <option name="MAIN_CLASS_NAME" value="source.test.TestShopData" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestShopGeneral" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="online-banking" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="source.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="source.test" />
+      <option name="MAIN_CLASS_NAME" value="source.test.TestShopGeneral" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -160,10 +157,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.ProjectTestSuite" />
-        <item itemvalue="JUnit.NotificationTest" />
-        <item itemvalue="JUnit.TransactionTest" />
-        <item itemvalue="JUnit.AccountTest" />
-        <item itemvalue="JUnit.BillTest" />
+        <item itemvalue="JUnit.ShopTestSuite" />
+        <item itemvalue="JUnit.TestShopBill" />
+        <item itemvalue="JUnit.TestShopData" />
+        <item itemvalue="JUnit.TestShopGeneral" />
       </list>
     </recent_temporary>
   </component>
@@ -201,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686478741918</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Last major update">
+      <created>1686480289930</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1686480289930</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

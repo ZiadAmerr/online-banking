@@ -2,6 +2,9 @@ package source.src;
 
 import java.util.*;
 
+import org.junit.Test;
+import static org.junit.Assert.*;
+
 public class Shop {
     private static final Map<Item, Integer> items = new HashMap<>();
     private static final ArrayList<Bill> bills = new ArrayList<>();
@@ -9,6 +12,10 @@ public class Shop {
 
     // Constructor
     private Shop() {} // Prevent instantiation
+    public static void reset() {
+        items.clear();
+        bills.clear();
+    }
 
 
     // Items
@@ -60,6 +67,12 @@ public class Shop {
         if (item == null)
             throw new IllegalArgumentException("Item does not exist");
         return item.getPrice();
+    }
+    public static int getItemCount(String name) {
+        Item item = getItem(name);
+        if (item == null)
+            throw new IllegalArgumentException("Item does not exist");
+        return items.get(item);
     }
 
 

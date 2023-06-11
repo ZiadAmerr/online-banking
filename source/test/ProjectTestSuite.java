@@ -13,5 +13,6 @@ import source.src.User;
         NotificationTest.class,
         TransactionTest.class,
         AccountTest.class,
+        ShopTestSuite.class
 })
 public class ProjectTestSuite { }

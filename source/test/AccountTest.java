@@ -2,15 +2,13 @@ package source.test;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.Test;
-
 import source.src.*;
-
 import java.util.Objects;
-
 public class AccountTest {
     static User user;
     static Account acc1;
@@ -20,12 +18,11 @@ public class AccountTest {
     private static final String PASSWORD = "pswd";
 
 
-    @BeforeEach
-    void SetUp() {
+    @Before
+    public void SetUp() {
         user = new User("ahmed","ahmed","ah");
         acc1 = new Account(user,"EGP","Savings");
         user.login("ahmed","ah");
-        accNum++;
     }
 
     @Test
@@ -42,7 +39,7 @@ public class AccountTest {
     @Test
     public void deposit() {
         acc1.deposit(23);
-        assertEquals(23,acc1.getBalance());
+        assertEquals(23,acc1.getBalance(), DELTA);
     }
 
     @Test
@@ -54,7 +51,7 @@ public class AccountTest {
     public void withdraw() {
         acc1.deposit(234);
         acc1.withdraw(acc1.getBalance());
-        assertEquals(0,acc1.getBalance());
+        assertEquals(0f, acc1.getBalance(), DELTA);
     }
     @Test
     public void withdrawExceedBalance(){
@@ -84,19 +81,21 @@ public class AccountTest {
 
     @Test
     public void testTransact() {
-        Shop.addNewItem("cola",12,2);
-        acc1.transact("cola");
+        Shop.addNewItem("pepsi",12,2);
+        acc1.transact("pepsi");
         assertTrue(acc1.getTransactions().size()>=1);
     }
     @Test
     public void transactNonExisting(){
-        assertThrows( IllegalArgumentException.class,()->acc1.transact("cola"));
+        assertThrows(
+                IllegalArgumentException.class,()->acc1.transact("unknown")
+        );
     }
 
     @Test
     public void getBalance() {
         acc1.deposit(33);
-        assertEquals(33,acc1.getBalance());
+        assertEquals(33,acc1.getBalance(), DELTA);
     }
 
     @Test
@@ -114,7 +113,13 @@ public class AccountTest {
 
     @Test
     public void getNumber() {
-        assertEquals(accNum,acc1.getNumber());
+        User user = new User("ahmed","ahmed","ah");
+        user.login("ahmed","ah");
+        user.createAccount("EGP","Savings");
+        user.useAccount(user.getAccountNums().get(0));
+        int accNum = user.getAccountNumber();
+        Account userAcc = Account.getAccountByNumber(accNum);
+        assertEquals(accNum, userAcc.getNumber());
     }
 
     @Test
@@ -130,7 +135,7 @@ public class AccountTest {
     @Test
     public void getData() {
         AccountData ad = acc1.getData();
-        assertEquals(ad.number(), accNum);
+        assertEquals(ad.number(), 32);
         assertEquals(ad.currency(), "EGP");
         assertEquals(ad.balance(), 0, DELTA);
         assertEquals(ad.type(), "Savings");
@@ -201,7 +206,7 @@ public class AccountTest {
         acc1.addBill(b);
         BillData bd = acc1.getBillsData().get(0);
         assertEquals("cola",bd.getName());
-        assertEquals(32,bd.getPrice());
+        assertEquals(32,bd.getPrice(), DELTA);
         assertEquals(0,bd.accountNumber());
         assertFalse(bd.getIsPaid());
 

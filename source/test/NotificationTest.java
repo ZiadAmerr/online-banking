@@ -28,4 +28,41 @@ public class NotificationTest {
         assertEquals(message, data.getMessage());
         assertNotNull(data.getDateSent());
     }
+
+    @Test
+    public void testGetMessage() {
+        String message = "Hello, World!";
+        Notification notification = new Notification(message);
+
+        String actualMessage = notification.getData().getMessage();
+        assertEquals(message, actualMessage);
+    }
+
+    @Test
+    public void testGetDateSent() {
+        String message = "Hello, World!";
+        Notification notification = new Notification(message);
+
+        assertNotNull(notification.getData().getDateSent());
+    }
+
+    @Test
+    public void testGetNotificationDataNotNull() {
+        String message = "Hello, World!";
+        Notification notification = new Notification(message);
+
+        NotificationData actualNotificationData = notification.getData();
+        assertNotNull(actualNotificationData);
+    }
+
+    @Test
+    public void testGetNotificationData() {
+        String message = "Hello, World!";
+        Notification notification = new Notification(message);
+
+        NotificationData actualNotificationData = notification.getData();
+        assertNotNull(actualNotificationData);
+        assertEquals(message, actualNotificationData.getMessage());
+        assertNotNull(actualNotificationData.getDateSent());
+    }
 }
