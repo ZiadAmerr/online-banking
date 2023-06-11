@@ -4,27 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9326b27a-5c8f-43fe-83d7-f02f18b7c68f" name="Changes" comment="testing files">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/src/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/src/AccountTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/AccountTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/src/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/src/TransactionData.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/TransactionData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/test/TestUserBuy.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/TestUserBuy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/test/TestUserCreateAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/TestUserCreateAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/test/TestUserGetName.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/TestUserGetName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/test/TestUserGetNot.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/TestUserGetNotifications.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/test/TestUserGetUsername.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/TestUserGetUsername.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/test/TestUserLoggedIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/TestUserLoggedIn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/test/TestUserLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/TestUserLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/test/TestUserLogout.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/TestUserLogout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/test/TestUserTransfer.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/TestUserTransfer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/test/TestUserUseAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/TestUserUseAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/test/TestUserViewTransc.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/TestUserViewTransc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/test/TransactionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/TransactionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/test/UserTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/test/UserTestSuite.java" afterDir="false" />
-    </list>
+    <list default="true" id="9326b27a-5c8f-43fe-83d7-f02f18b7c68f" name="Changes" comment="Last major update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="major-update" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -214,6 +194,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Major update" />
     <MESSAGE value="testing files" />
-    <option name="LAST_COMMIT_MESSAGE" value="testing files" />
+    <MESSAGE value="Last major update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Last major update" />
   </component>
 </project>
