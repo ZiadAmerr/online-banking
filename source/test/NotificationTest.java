@@ -1,26 +1,25 @@
-package source.src;
-
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-
-import java.time.LocalDateTime;
+package source.test;
 
 import static org.junit.Assert.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.Test;
+
+import source.src.*;
 
 public class NotificationTest {
 
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
     }
 
-    @After
+    @AfterEach
     public void tearDown() throws Exception {
     }
 
     @Test
     public void testGetData() {
-
         String message = "Hello, World!";
         Notification notification = new Notification(message);
 
@@ -29,12 +28,4 @@ public class NotificationTest {
         assertEquals(message, data.getMessage());
         assertNotNull(data.getDateSent());
     }
-
-
-
-
-
-
-
-
 }

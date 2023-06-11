@@ -1,22 +1,24 @@
-package source.src;
-
-import org.junit.After;
-import org.junit.Before;
-import org.junit.jupiter.api.Test;
+package source.test;
 
 import static org.junit.Assert.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.Test;
+
+import source.src.*;
 
 public class BuyableTest {
 
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
     }
 
-    @After
+    @AfterEach
     public void tearDown() throws Exception {
     }
     @Test
-    void testGetName() {
+    public void testGetName() {
         String name = "Product";
         float price = 10.0f;
         Buyable buyable = new BuyableImpl(name, price);
@@ -25,7 +27,7 @@ public class BuyableTest {
     }
 
     @Test
-    void testGetPrice() {
+    public void testGetPrice() {
         String name = "Product";
         float price = 10.0f;
         Buyable buyable = new BuyableImpl(name, price);
@@ -34,7 +36,7 @@ public class BuyableTest {
     }
 
     @Test
-    void testInvalidPrice() {
+    public void testInvalidPrice() {
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () ->
                 new BuyableImpl("Product", -10.0f));
 
@@ -42,7 +44,7 @@ public class BuyableTest {
     }
 
     @Test
-    void testEmptyName() {
+    public void testEmptyName() {
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () ->
                 new BuyableImpl("", 10.0f));
 

@@ -236,7 +236,7 @@ public class User {
 
         if (account.withdraw(amount)) {
             notifications.add(
-                    new Notification("You withdrew " + amount + " from your account")
+                    new Notification("You withdrew " + amount + " " + account.getCurrency() + " from your account")
             );
 
             account.transact(amount, account.getNumber());
@@ -298,13 +298,6 @@ public class User {
         }
         return bills;
     }
-    public List<Bill> getBillsByAccount(int accountNumber) {
-        Account acc = Account.getAccountByNumber(accountNumber);
-        if (acc == null)
-            throw new IllegalArgumentException("Account with number " + accountNumber + " does not exist");
-
-        return acc.getBills();
-    }
     public List<Bill> getBills() {
         if (!loggedIn || account == null)
             return Collections.emptyList();
@@ -312,7 +305,7 @@ public class User {
     }
     public int getAccountNumber() {
         if (!loggedIn || account == null)
-            return -1;
+            throw new IllegalStateException("User is not logged in or is not using an account");
         return account.getNumber();
     }
 
