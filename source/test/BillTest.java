@@ -1,22 +1,23 @@
-package source.src;
-
-import org.junit.After;
-import org.junit.Before;
-import org.junit.jupiter.api.Test;
+package source.test;
 
 import static org.junit.Assert.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.Test;
+
+import source.src.*;
 
 public class BillTest {
 
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
     }
 
-    @After
+    @AfterEach
     public void tearDown() throws Exception {
     }
     @Test
-    void testGetAccountNumber() {
+    public void testGetAccountNumber() {
 
         int accountNumber = 123456;
         Bill bill = new Bill("Electricity Bill", 100.0f, accountNumber);
@@ -25,7 +26,7 @@ public class BillTest {
     }
 
     @Test
-    void testGetIsPaid() {
+    public void testGetIsPaid() {
 
         Bill bill = new Bill("Electricity Bill", 100.0f, 123456);
         boolean isPaid = bill.getIsPaid();
@@ -33,7 +34,7 @@ public class BillTest {
     }
 
     @Test
-    void testPay() {
+    public void testPay() {
 
         Bill bill = new Bill("Electricity Bill", 100.0f, 123456);
         bill.pay();

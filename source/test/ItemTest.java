@@ -1,35 +1,35 @@
 package source.test;
 
-import org.junit.jupiter.api.Test;
-import source.src.Item;
+import static org.junit.Assert.*;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import source.src.*;
 
-class ItemTest {
+public class ItemTest {
 
     @Test
-    void testEquals() {
+    public void testEquals() {
         Item item = new Item("cola",32);
         Item item2 = new Item("cola",32);
         assertEquals(item, item2);
     }
 
     @Test
-    void testEqualsDiffPrice(){
+    public void testEqualsDiffPrice(){
         Item item = new Item("cola",32);
         Item item2 = new Item("cola",39);
         assertNotEquals(item, item2);
     }
 
     @Test
-    void testEqualsDiffName(){
+    public void testEqualsDiffName(){
         Item item = new Item("pepsi",32);
         Item item2 = new Item("cola",39);
         assertNotEquals(item, item2);
     }
 
     @Test
-    void testConstructor(){
+    public void testConstructor(){
         assertThrows(IllegalArgumentException.class,()->new Item("cola",-12));
     }
 }

@@ -38,8 +38,6 @@ class UserTest {
 
     @Test
     void testCreateAccount() {
-        // TODO: Test with invalid currency and type
-        // TODO: Test with other currencies and types
         User user1 = new User("x","y","z");
         assertFalse(user1.createAccount("EGP", "Checking"));
 
